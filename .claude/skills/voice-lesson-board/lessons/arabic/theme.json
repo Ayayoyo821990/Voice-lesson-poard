@@ -1,0 +1,31 @@
+{
+ "about": "Arabic proposal: plain warm paper (no lines), terracotta shapes, teal accent, marker pen.",
+ "paper": "#F8F1E4",
+ "ink": "#2B1D16",
+ "shape": "#9A4A33",
+ "accent": "#0E8A7E",
+ "pen": "marker",
+ "font": "fonts/PlaypenSansArabic-Bold.ttf",
+ "minFontPx": 48,
+ "texture": {
+  "grainRGB": [
+   0.3,
+   0.22,
+   0.14
+  ],
+  "grainAlpha": [
+   0.7,
+   -0.3
+  ],
+  "grainOpacity": 0.5,
+  "fibreRGB": [
+   0.6,
+   0.45,
+   0.28
+  ],
+  "fibreAlpha": [
+   0.28,
+   -0.1
+  ]
+ }
+}

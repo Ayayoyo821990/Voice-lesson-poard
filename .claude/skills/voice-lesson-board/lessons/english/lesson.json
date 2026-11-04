@@ -1,0 +1,306 @@
+{
+ "about": "Director plan (English): a or an? as a comparison table. No coordinates.",
+ "seed": 33,
+ "frame": {
+  "w": 1080,
+  "h": 1920,
+  "fps": 30,
+  "tail": 0.8,
+  "margin": 60,
+  "center_block": true,
+  "safe": {
+   "top": 270,
+   "bottom": 480,
+   "left": 70,
+   "right": 140
+  },
+  "fit": {
+   "min_scale": 0.8,
+   "max_scale": 1.35
+  },
+  "auto_trim": true,
+  "pen": {
+   "max_speed": 1800,
+   "min_dur": 0.25,
+   "queue": 1.2
+  },
+  "idle": {
+   "max": 1.5
+  }
+ },
+ "captions": {
+  "size": 44,
+  "dir": "ltr"
+ },
+ "layout": {
+  "flow": true,
+  "gap": 26
+ },
+ "coverage": {
+  "strict": true,
+  "exempt": {}
+ },
+ "events": [
+  {
+   "id": "badge",
+   "tool": "badge",
+   "label": "subject",
+   "text": "English",
+   "color": "shape",
+   "y": 332,
+   "group": "badge",
+   "anchor": {
+    "segment": 1
+   },
+   "dur": 0.9,
+   "dir": "ltr"
+  },
+  {
+   "id": "voice",
+   "tool": "voice_wave",
+   "label": "voice ring",
+   "x": 878,
+   "y": 332,
+   "size": 96,
+   "group": "voice",
+   "anchor": {
+    "segment": 1
+   },
+   "offset": 0.3,
+   "dur": 0.7
+  },
+  {
+   "id": "b1_g0",
+   "tool": "text",
+   "label": "greeting",
+   "text": "Hello, friends!",
+   "size": 104,
+   "group": "greeting",
+   "in_block": false,
+   "center_in_frame": true,
+   "fade_out": {
+    "at": 1.15,
+    "dur": 0.3
+   },
+   "anchor": {
+    "segment": 1
+   },
+   "dur": 0.6,
+   "dir": "ltr"
+  },
+  {
+   "id": "b1_ti1",
+   "tool": "title",
+   "label": "a or an?",
+   "text": "a or an?",
+   "anchor": {
+    "segment": 2
+   },
+   "dur": 0.8,
+   "size": 76,
+   "group": "title",
+   "dir": "ltr"
+  },
+  {
+   "id": "b1_tb2h0",
+   "tool": "label",
+   "label": "an",
+   "text": "an",
+   "size": 76,
+   "cx": 323,
+   "beside": false,
+   "color": "shape",
+   "anchor": {
+    "segment": 3,
+    "word": "an",
+    "index": 2
+   },
+   "dur": 0.5,
+   "group": "table",
+   "dir": "ltr"
+  },
+  {
+   "id": "b1_tb2h1",
+   "tool": "label",
+   "label": "a",
+   "text": "a",
+   "size": 76,
+   "cx": 688,
+   "beside": true,
+   "color": "accent",
+   "anchor": {
+    "segment": 5,
+    "word": "a",
+    "index": 2
+   },
+   "dur": 0.5,
+   "group": "table",
+   "dir": "ltr"
+  },
+  {
+   "id": "b1_tb2m0",
+   "tool": "highlight",
+   "label": "highlight b1_tb2h0",
+   "of": "b1_tb2h0",
+   "anchor": {
+    "segment": 4,
+    "word": "An",
+    "index": 0
+   },
+   "dur": 0.5,
+   "group": "table",
+   "opacity": 0.25,
+   "fy": 0.62,
+   "width": 40,
+   "color": "shape"
+  },
+  {
+   "id": "b1_tb2m1",
+   "tool": "highlight",
+   "label": "highlight b1_tb2h1",
+   "of": "b1_tb2h1",
+   "anchor": {
+    "segment": 6,
+    "word": "A",
+    "index": 0
+   },
+   "dur": 0.5,
+   "group": "table",
+   "opacity": 0.25,
+   "fy": 0.62,
+   "width": 40,
+   "color": "accent"
+  },
+  {
+   "id": "b1_tb2r0c0",
+   "tool": "text",
+   "label": "a e i o u",
+   "text": "a e i o u",
+   "size": 56,
+   "cx": 323,
+   "beside": false,
+   "anchor": {
+    "segment": 3,
+    "word": "vowel",
+    "index": 5
+   },
+   "dur": 0.5,
+   "group": "table",
+   "gap": 34,
+   "dir": "ltr"
+  },
+  {
+   "id": "b1_tb2r0c1",
+   "tool": "text",
+   "label": "other sounds",
+   "text": "other sounds",
+   "size": 56,
+   "cx": 688,
+   "beside": true,
+   "anchor": {
+    "segment": 5,
+    "word": "other",
+    "index": 5
+   },
+   "dur": 0.5,
+   "group": "table",
+   "gap": 34,
+   "dir": "ltr"
+  },
+  {
+   "id": "b1_tb2r1c0",
+   "tool": "text",
+   "label": "an apple",
+   "text": "an apple",
+   "size": 56,
+   "cx": 323,
+   "beside": false,
+   "anchor": {
+    "segment": 4,
+    "word": "An",
+    "index": 0
+   },
+   "dur": 0.5,
+   "group": "table",
+   "gap": 26,
+   "dir": "ltr"
+  },
+  {
+   "id": "b1_tb2r1c1",
+   "tool": "text",
+   "label": "a cat",
+   "text": "a cat",
+   "size": 56,
+   "cx": 688,
+   "beside": true,
+   "anchor": {
+    "segment": 6,
+    "word": "A",
+    "index": 0
+   },
+   "dur": 0.5,
+   "group": "table",
+   "gap": 26,
+   "dir": "ltr"
+  },
+  {
+   "id": "b1_tb2r2c0",
+   "tool": "text",
+   "label": "an egg",
+   "text": "an egg",
+   "size": 56,
+   "cx": 323,
+   "beside": false,
+   "anchor": {
+    "segment": 4,
+    "word": "An",
+    "index": 2
+   },
+   "dur": 0.5,
+   "group": "table",
+   "gap": 26,
+   "dir": "ltr"
+  },
+  {
+   "id": "b1_tb2r2c1",
+   "tool": "text",
+   "label": "a dog",
+   "text": "a dog",
+   "size": 56,
+   "cx": 688,
+   "beside": true,
+   "anchor": {
+    "segment": 6,
+    "word": "A",
+    "index": 2
+   },
+   "dur": 0.5,
+   "group": "table",
+   "gap": 26,
+   "dir": "ltr"
+  },
+  {
+   "id": "b1_ok3",
+   "tool": "check",
+   "label": "tick",
+   "group": "celebrate",
+   "anchor": {
+    "segment": 7
+   },
+   "dur": 0.5,
+   "gap": 40
+  },
+  {
+   "id": "b1_sp3",
+   "tool": "sparkle",
+   "label": "sparkles",
+   "of": "b1_ok3",
+   "group": "celebrate",
+   "anchor": {
+    "segment": 7
+   },
+   "offset": 0.55,
+   "dur": 0.5
+  }
+ ]
+}

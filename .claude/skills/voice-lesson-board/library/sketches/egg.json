@@ -1,0 +1,2 @@
+{"about": "An egg (one outline). Raw units.", "name": "egg", "base": [],
+ "parts": {"shell": {"paths": ["M 100 10 C 150 10 180 90 180 130 C 180 180 145 205 100 205 C 55 205 20 180 20 130 C 20 90 50 10 100 10 Z"], "color": "ink", "box": [20, 10, 180, 205]}}}

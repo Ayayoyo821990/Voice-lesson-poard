@@ -1,0 +1,102 @@
+{
+ "about": "Director plan (Arabic): the three kinds of word as a comparison table. No coordinates.",
+ "subject": "لغة عربية",
+ "lang": "ar",
+ "seed": 32,
+ "steps": [
+  {
+   "title": "أنواع الكلمة",
+   "beats": [
+    {
+     "do": "greet",
+     "text": "مرحبًا يا أبطال!",
+     "at": "1",
+     "hold": 1.45
+    },
+    {
+     "do": "title",
+     "text": "أنواع الكلمة",
+     "at": "2"
+    },
+    {
+     "do": "table",
+     "cols": [
+      {
+       "head": "اسم",
+       "at": "3:اسمٌ",
+       "mark_at": "4:الاسمُ"
+      },
+      {
+       "head": "فعل",
+       "at": "3:وفعلٌ",
+       "mark_at": "5:والفعلُ"
+      },
+      {
+       "head": "حرف",
+       "at": "3:وحرف",
+       "mark_at": "6:والحرفُ"
+      }
+     ],
+     "rows": [
+      {
+       "cells": [
+        [
+         "شيء",
+         "4:شيء"
+        ],
+        [
+         "حدث",
+         "5:حدث"
+        ],
+        [
+         "مع غيره",
+         "6:غيره"
+        ]
+       ]
+      },
+      {
+       "size": "big",
+       "color": "answer",
+       "cells": [
+        [
+         "قلم",
+         "4:قلم"
+        ],
+        [
+         "كتب",
+         "5:كتب"
+        ],
+        [
+         "في",
+         "6:في"
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "do": "mark",
+     "of": "tb2r1c0",
+     "at": "7:قلمٌ",
+     "color": "first"
+    },
+    {
+     "do": "mark",
+     "of": "tb2r1c1",
+     "at": "7:وكتبَ",
+     "color": "first"
+    },
+    {
+     "do": "mark",
+     "of": "tb2r1c2",
+     "at": "7:وفي",
+     "color": "first"
+    },
+    {
+     "do": "celebrate",
+     "at": "8"
+    }
+   ]
+  }
+ ]
+}

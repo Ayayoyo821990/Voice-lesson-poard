@@ -1,0 +1,93 @@
+{
+ "audio": "proposals/english/voice.mp3",
+ "duration": 18.0,
+ "method": "scripts/prepare.py: ffmpeg silencedetect noise=-35dB d=0.25; sentence boundary = longest detected pause between the last word of a sentence and the first of the next (word times: faster-whisper large-v3, local).",
+ "segments": [
+  {
+   "id": 1,
+   "text": "Hello, friends!",
+   "start": 0.0,
+   "end": 0.949
+  },
+  {
+   "id": 2,
+   "text": "Today: a or an?",
+   "start": 1.269,
+   "end": 3.437,
+   "inner_pauses": [
+    [
+     1.761,
+     2.197
+    ],
+    [
+     2.539,
+     2.8
+    ]
+   ]
+  },
+  {
+   "id": 3,
+   "text": "We say an before a vowel sound: a, e, i, o, u.",
+   "start": 3.891,
+   "end": 8.992,
+   "inner_pauses": [
+    [
+     6.351,
+     6.852
+    ],
+    [
+     7.136,
+     7.492
+    ],
+    [
+     7.788,
+     8.135
+    ],
+    [
+     8.429,
+     8.727
+    ]
+   ]
+  },
+  {
+   "id": 4,
+   "text": "An apple. An egg.",
+   "start": 9.244,
+   "end": 11.695,
+   "inner_pauses": [
+    [
+     9.491,
+     10.036
+    ],
+    [
+     10.74,
+     11.109
+    ]
+   ]
+  },
+  {
+   "id": 5,
+   "text": "We say a before the other sounds.",
+   "start": 12.134,
+   "end": 14.582
+  },
+  {
+   "id": 6,
+   "text": "A cat. A dog.",
+   "start": 14.98,
+   "end": 16.478,
+   "inner_pauses": [
+    [
+     15.622,
+     15.91
+    ]
+   ]
+  },
+  {
+   "id": 7,
+   "text": "Great job!",
+   "start": 16.824,
+   "end": 18.0
+  }
+ ]
+}

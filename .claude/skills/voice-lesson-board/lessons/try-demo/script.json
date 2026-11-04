@@ -1,0 +1,14 @@
+{
+ "about": "ENGINE DEMO of «وقّف وجرّب» kinds (choice, true_false, blank). SYNTHETIC timing with 3.6 s pauses for the timer.",
+ "pace": {
+  "sentence": 3.6
+ },
+ "sentences": [
+  "سؤال: أي واحد من هدول حيوان ثديي؟",
+  "الجواب: الحوت.",
+  "صح أو غلط: الشمس كوكب.",
+  "غلط، الشمس نجمة.",
+  "كمّل الفراغ: الماء بيغلي على مية درجة.",
+  "مية درجة!"
+ ]
+}

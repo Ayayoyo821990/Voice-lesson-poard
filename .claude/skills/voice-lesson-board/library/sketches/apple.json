@@ -1,0 +1,5 @@
+{"about": "An apple in three parts (body, stem, leaf). Raw units.", "name": "apple", "base": [],
+ "parts": {
+  "body": {"paths": ["M 100 60 C 60 30 10 50 12 110 C 14 170 60 210 100 190 C 140 210 186 170 188 110 C 190 50 140 30 100 60 Z"], "color": "accent", "box": [12, 38, 188, 200]},
+  "stem": {"paths": ["M 100 60 C 98 40 104 22 112 12"], "color": "ink", "box": [98, 12, 112, 60]},
+  "leaf": {"paths": ["M 106 36 C 124 14 150 16 160 24 C 146 40 124 44 106 36 Z"], "color": "shape", "box": [106, 15, 160, 42]}}}

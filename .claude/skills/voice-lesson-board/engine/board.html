@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Voice Lesson Board</title>
+<style>
+  /* colours and font come from theme.json at load time (CSS variables / FontFace) — none are written here */
+  html, body { margin: 0; background: var(--paper); overflow: hidden; }
+  #stage { position: absolute; left: 0; top: 0; overflow: hidden; transform-origin: 0 0; background: var(--paper); color: var(--ink); font-family: Pen; }
+  #board { position: absolute; left: 0; top: 0; transform-origin: 0 0; }
+  #paper { position: absolute; left: -600px; top: -600px; }
+  #ov { position: absolute; left: 0; top: 0; overflow: visible; }
+  /* Arabic text: rtl, whole words, no tracking, tall lines */
+  .ar { direction: rtl; unicode-bidi: isolate; letter-spacing: 0; line-height: 1.9; font-family: Pen; }
+  .row { position: absolute; left: 0; display: flex; justify-content: center; }
+  .row.ar { direction: rtl; }
+  /* English and other left-to-right text ("dir": "ltr") */
+  .ltr { direction: ltr; unicode-bidi: isolate; letter-spacing: 0; line-height: 1.9; font-family: Pen; }
+  .w { display: inline-block; visibility: hidden; white-space: nowrap; font-weight: 700; color: var(--ink); }
+  .ink { filter: url(#inkText); }
+</style>
+</head>
+<body>
+<div id="stage">
+  <div id="board">
+    <svg id="paper" width="2280" height="3120" viewBox="-600 -600 2280 3120">
+      <defs>
+        <filter id="grain" x="-600" y="-600" width="2280" height="3120" filterUnits="userSpaceOnUse">
+          <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="5" result="g"/>
+          <feColorMatrix id="grainM" in="g" type="matrix"/>
+        </filter>
+        <filter id="fibre" x="-600" y="-600" width="2280" height="3120" filterUnits="userSpaceOnUse">
+          <feTurbulence type="fractalNoise" baseFrequency="0.006 0.012" numOctaves="3" seed="9" result="s"/>
+          <feColorMatrix id="fibreM" in="s" type="matrix"/>
+        </filter>
+      </defs>
+      <rect id="paperBase" x="-600" y="-600" width="2280" height="3120"/>
+      <rect x="-600" y="-600" width="2280" height="3120" filter="url(#fibre)"/>
+      <rect id="grainRect" x="-600" y="-600" width="2280" height="3120" filter="url(#grain)"/>
+    </svg>
+    <div id="texts"></div>
+    <svg id="ov">
+      <defs>
+        <filter id="inkStroke" x="-600" y="-600" width="2280" height="3120" filterUnits="userSpaceOnUse">
+          <feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="2" seed="11" result="n"/>
+          <feDisplacementMap in="SourceGraphic" in2="n" scale="2.2" xChannelSelector="R" yChannelSelector="G"/>
+        </filter>
+        <filter id="inkText" x="-4%" y="-4%" width="108%" height="108%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" seed="17" result="n"/>
+          <feDisplacementMap in="SourceGraphic" in2="n" scale="2" xChannelSelector="R" yChannelSelector="G"/>
+        </filter>
+      </defs>
+      <g id="gShade" filter="url(#inkStroke)"></g>
+      <g id="gLine" filter="url(#inkStroke)"></g>
+      <g id="gMark"></g>
+    </svg>
+  </div>
+</div>
+<script src="engine.js"></script>
+</body>
+</html>

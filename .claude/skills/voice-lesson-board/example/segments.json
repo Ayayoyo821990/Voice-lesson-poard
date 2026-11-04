@@ -1,0 +1,79 @@
+{
+ "audio": "example/voice.mp3",
+ "source_copied_from": "teacher recording supplied with the example",
+ "duration": 24,
+ "video_duration": 24.6,
+ "method": "ffmpeg silencedetect noise=-35dB d=0.25 -> 12 speech regions / 11 internal gaps. No single (noise,d) setting yields exactly the 7 sentences: at d=0.5 the 0.589s pause after 'بس:' (16.30) outranks the real 0.433s sentence gap (19.66), giving a wrong split. Tuning: the 6 sentence-boundary gaps were chosen among DETECTED gaps using the local whisper transcript (voice/words.json); all times below are silencedetect values, none invented. Non-boundary pauses kept as intra-segment pauses.",
+ "segments": [
+  {
+   "id": 1,
+   "text": "أهلاً يا أبطال!",
+   "start": 0,
+   "end": 1.092
+  },
+  {
+   "id": 2,
+   "text": "اليوم في درس جمع الكسور المتشابهة، من الوحدة الرابعة: الكسور.",
+   "start": 1.928,
+   "end": 7.095,
+   "inner_pauses": [
+    [
+     4.765,
+     5.1
+    ],
+    [
+     6.209,
+     6.509
+    ]
+   ]
+  },
+  {
+   "id": 3,
+   "text": "شوفوا معي: عندنا ربع زائد ربعين.",
+   "start": 7.79,
+   "end": 11.19,
+   "inner_pauses": [
+    [
+     8.381,
+     8.862
+    ]
+   ]
+  },
+  {
+   "id": 4,
+   "text": "المقام واحد، وهو أربعة، فما نغيّره.",
+   "start": 11.792,
+   "end": 14.714,
+   "inner_pauses": [
+    [
+     13.715,
+     14.02
+    ]
+   ]
+  },
+  {
+   "id": 5,
+   "text": "نجمع البسطين بس: واحد زائد اثنين يساوي ثلاثة.",
+   "start": 15.253,
+   "end": 19.662,
+   "inner_pauses": [
+    [
+     16.299,
+     16.888
+    ]
+   ]
+  },
+  {
+   "id": 6,
+   "text": "يعني الناتج ثلاثة أرباع.",
+   "start": 20.095,
+   "end": 22.182
+  },
+  {
+   "id": 7,
+   "text": "سهل، صح؟",
+   "start": 22.768,
+   "end": 23.664
+  }
+ ]
+}

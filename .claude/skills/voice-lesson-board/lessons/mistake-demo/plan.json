@@ -1,0 +1,61 @@
+{
+ "about": "Director plan for the common-mistake demo (synthetic timing). No coordinates.",
+ "subject": "رياضيات",
+ "title": "جمع الكسور",
+ "seed": 44,
+ "steps": [
+  {
+   "title": "نفس المقام",
+   "hero": "1/4 + 2/4",
+   "hero_at": "1",
+   "beats": [
+    {
+     "do": "common_mistake",
+     "note": "الغلطة المشهورة",
+     "wrong": "1/4 + 2/4 = 3/8",
+     "right": "1/4 + 2/4 = 3/4",
+     "at": "2",
+     "strike_at": "3:غلط",
+     "right_at": "4"
+    },
+    {
+     "do": "answer",
+     "label": "الجواب",
+     "value": "3/4",
+     "at": "5"
+    }
+   ],
+   "split": [
+    1
+   ]
+  },
+  {
+   "title": "على الدائرة",
+   "hero": "3/4",
+   "hero_at": "6",
+   "beats": [
+    {
+     "do": "fraction_pie",
+     "num": 3,
+     "den": 4,
+     "at": "6:الدائرة",
+     "at_shade": "6:قطع"
+    }
+   ]
+  }
+ ],
+ "worksheet": {
+  "practice": [
+   {
+    "say": "اجمع:",
+    "text": "2/5 + 1/5",
+    "answer": "3/5"
+   },
+   {
+    "say": "اجمع:",
+    "text": "3/7 + 2/7",
+    "answer": "5/7"
+   }
+  ]
+ }
+}

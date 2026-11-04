@@ -1,0 +1,327 @@
+{
+ "best_effort": true,
+ "model": "faster-whisper large-v3 (local cache, int8 cpu), matched to script.json by scripts/prepare.py",
+ "words": [
+  {
+   "word": "مرحبًا",
+   "heard": "مرحبًا",
+   "start": 0.0,
+   "end": 0.52,
+   "confidence": 0.835
+  },
+  {
+   "word": "يا",
+   "heard": "يا",
+   "start": 0.52,
+   "end": 0.64,
+   "confidence": 0.991
+  },
+  {
+   "word": "أبطال",
+   "heard": "أبطال!",
+   "start": 0.64,
+   "end": 1.16,
+   "confidence": 0.999
+  },
+  {
+   "word": "درسُنا",
+   "heard": "درسُنا",
+   "start": 1.22,
+   "end": 2.08,
+   "confidence": 0.801
+  },
+  {
+   "word": "اليوم",
+   "heard": "اليوم",
+   "start": 2.08,
+   "end": 2.54,
+   "confidence": 0.998
+  },
+  {
+   "word": "أنواعُ",
+   "heard": "أنواعُ",
+   "start": 2.54,
+   "end": 3.5,
+   "confidence": 0.857
+  },
+  {
+   "word": "الكلمة",
+   "heard": "الكلمة.",
+   "start": 3.5,
+   "end": 4.04,
+   "confidence": 0.997
+  },
+  {
+   "word": "الكلمةُ",
+   "heard": "الكلمةُ",
+   "start": 4.24,
+   "end": 5.4,
+   "confidence": 0.921
+  },
+  {
+   "word": "في",
+   "heard": "في",
+   "start": 5.4,
+   "end": 5.54,
+   "confidence": 0.994
+  },
+  {
+   "word": "اللغة",
+   "heard": "اللغة",
+   "start": 5.54,
+   "end": 5.9,
+   "confidence": 0.992
+  },
+  {
+   "word": "العربية",
+   "heard": "العربية",
+   "start": 5.9,
+   "end": 6.5,
+   "confidence": 0.916
+  },
+  {
+   "word": "ثلاثةُ",
+   "heard": "ثلاثةُ",
+   "start": 6.5,
+   "end": 7.54,
+   "confidence": 0.952
+  },
+  {
+   "word": "أنواع",
+   "heard": "أنواعُ.",
+   "start": 7.54,
+   "end": 8.14,
+   "confidence": 0.808
+  },
+  {
+   "word": "اسمٌ",
+   "heard": "اسمٌ،",
+   "start": 8.117,
+   "end": 9.157,
+   "confidence": 1.0,
+   "refined": true
+  },
+  {
+   "word": "وفعلٌ",
+   "heard": "وفعلٌ،",
+   "start": 9.16,
+   "end": 10.26,
+   "confidence": 0.988
+  },
+  {
+   "word": "وحرف",
+   "heard": "وحرف.",
+   "start": 10.26,
+   "end": 10.96,
+   "confidence": 0.998
+  },
+  {
+   "word": "الاسمُ",
+   "heard": "الاسمُ",
+   "start": 11.878,
+   "end": 12.388,
+   "confidence": 1.0,
+   "refined": true
+  },
+  {
+   "word": "يدلُّ",
+   "heard": "يدلُّ",
+   "start": 12.38,
+   "end": 13.04,
+   "confidence": 0.965
+  },
+  {
+   "word": "على",
+   "heard": "على",
+   "start": 13.04,
+   "end": 13.14,
+   "confidence": 1.0
+  },
+  {
+   "word": "شيء",
+   "heard": "شيء،",
+   "start": 13.14,
+   "end": 13.86,
+   "confidence": 0.875
+  },
+  {
+   "word": "مثل",
+   "heard": "مثل",
+   "start": 13.86,
+   "end": 14.56,
+   "confidence": 0.999
+  },
+  {
+   "word": "قلم",
+   "heard": "قلم.",
+   "start": 14.56,
+   "end": 15.24,
+   "confidence": 0.839
+  },
+  {
+   "word": "والفعلُ",
+   "heard": "والفعلُ",
+   "start": 15.52,
+   "end": 16.68,
+   "confidence": 0.926
+  },
+  {
+   "word": "يدلُّ",
+   "heard": "يدلُّ",
+   "start": 16.68,
+   "end": 17.28,
+   "confidence": 0.994
+  },
+  {
+   "word": "على",
+   "heard": "على",
+   "start": 17.28,
+   "end": 17.42,
+   "confidence": 1.0
+  },
+  {
+   "word": "حدث",
+   "heard": "حدث،",
+   "start": 17.42,
+   "end": 18.2,
+   "confidence": 0.995
+  },
+  {
+   "word": "مثل",
+   "heard": "مثل",
+   "start": 18.2,
+   "end": 18.92,
+   "confidence": 1.0
+  },
+  {
+   "word": "كتب",
+   "heard": "كتب.",
+   "start": 18.92,
+   "end": 19.66,
+   "confidence": 0.996
+  },
+  {
+   "word": "والحرفُ",
+   "heard": "والحرفُ",
+   "start": 19.82,
+   "end": 20.98,
+   "confidence": 0.996
+  },
+  {
+   "word": "لا",
+   "heard": "لا",
+   "start": 20.98,
+   "end": 21.32,
+   "confidence": 1.0
+  },
+  {
+   "word": "يظهرُ",
+   "heard": "يظهرُ",
+   "start": 21.32,
+   "end": 21.88,
+   "confidence": 0.915
+  },
+  {
+   "word": "معناه",
+   "heard": "معناه",
+   "start": 21.88,
+   "end": 22.4,
+   "confidence": 0.999
+  },
+  {
+   "word": "إلا",
+   "heard": "إلا",
+   "start": 22.4,
+   "end": 22.94,
+   "confidence": 0.976
+  },
+  {
+   "word": "مع",
+   "heard": "مع",
+   "start": 22.94,
+   "end": 23.18,
+   "confidence": 0.996
+  },
+  {
+   "word": "غيره",
+   "heard": "غيره،",
+   "start": 23.18,
+   "end": 23.8,
+   "confidence": 0.998
+  },
+  {
+   "word": "مثل",
+   "heard": "مثل",
+   "start": 23.8,
+   "end": 24.62,
+   "confidence": 1.0
+  },
+  {
+   "word": "في",
+   "heard": "في.",
+   "start": 24.62,
+   "end": 25.12,
+   "confidence": 0.998
+  },
+  {
+   "word": "إذن",
+   "heard": "إذن،",
+   "start": 25.925,
+   "end": 26.275,
+   "confidence": 1.0,
+   "refined": true
+  },
+  {
+   "word": "قلمٌ",
+   "heard": "قلمٌ",
+   "start": 26.275,
+   "end": 27.235,
+   "confidence": 1.0,
+   "refined": true
+  },
+  {
+   "word": "اسم",
+   "heard": "اسم،",
+   "start": 27.235,
+   "end": 28.075,
+   "confidence": 1.0,
+   "refined": true
+  },
+  {
+   "word": "وكتبَ",
+   "heard": "وكتبَ",
+   "start": 28.08,
+   "end": 29.14,
+   "confidence": 0.812
+  },
+  {
+   "word": "فعل",
+   "heard": "فعل،",
+   "start": 29.14,
+   "end": 29.96,
+   "confidence": 0.977
+  },
+  {
+   "word": "وفي",
+   "heard": "وفي",
+   "start": 29.96,
+   "end": 30.64,
+   "confidence": 0.996
+  },
+  {
+   "word": "حرف",
+   "heard": "حرف.",
+   "start": 30.64,
+   "end": 31.48,
+   "confidence": 0.986
+  },
+  {
+   "word": "أحسنتم",
+   "heard": "أحسنتم!",
+   "start": 31.62,
+   "end": 32.8,
+   "confidence": 0.996
+  }
+ ],
+ "refined": "scripts/refine.py: each sentence heard alone with its own text as prompt (faster-whisper large-v3, local)"
+}

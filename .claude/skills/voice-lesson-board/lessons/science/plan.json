@@ -1,0 +1,71 @@
+{
+ "about": "Director plan (science): parts of a plant. No coordinates: the drawing comes from library/sketches/plant.json, labels are placed beside their part.",
+ "subject": "علوم",
+ "lang": "ar",
+ "seed": 34,
+ "steps": [
+  {
+   "title": "أجزاء النبات",
+   "beats": [
+    {
+     "do": "greet",
+     "text": "أهلاً يا أبطال!",
+     "at": "1"
+    },
+    {
+     "do": "title",
+     "text": "أجزاء النبات",
+     "at": "2"
+    },
+    {
+     "do": "label_parts",
+     "sketch": "plant",
+     "base": [
+      "soil"
+     ],
+     "at": "2:النبات",
+     "parts": [
+      {
+       "part": "roots",
+       "text": "الجذور",
+       "at": "3:الجذور",
+       "recap_at": "7:جذور"
+      },
+      {
+       "part": "stem",
+       "text": "الساق",
+       "at": "4:الساق",
+       "recap_at": "7:ساق"
+      },
+      {
+       "part": "leaves",
+       "text": "الأوراق",
+       "at": "5:الأوراق",
+       "wash": true,
+       "wash_at": "5:الغذاء",
+       "recap_at": "7:أوراق"
+      },
+      {
+       "part": "sun",
+       "at": "5:الشمس",
+       "wash": "answer"
+      },
+      {
+       "part": "flower",
+       "text": "الزهرة",
+       "at": "6:الزهرة",
+       "wash": "answer",
+       "wash_at": "6:منها",
+       "label_color": "answer",
+       "recap_at": "7:وزهرة"
+      }
+     ]
+    },
+    {
+     "do": "celebrate",
+     "at": "8"
+    }
+   ]
+  }
+ ]
+}

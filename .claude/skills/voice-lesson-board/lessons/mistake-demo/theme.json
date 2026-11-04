@@ -1,0 +1,38 @@
+{
+ "about": "Maths proposal: squared notebook paper, blue shapes, orange accent, marker pen. shape2 (green) = the second condition/category, so the accent stays for emphasis only.",
+ "paper": "#FBF8F1",
+ "ink": "#1B2A3A",
+ "shape": "#1F6FB2",
+ "accent": "#FF5A1F",
+ "pen": "marker",
+ "font": "fonts/PlaypenSansArabic-Bold.ttf",
+ "minFontPx": 48,
+ "texture": {
+  "grainRGB": [
+   0.25,
+   0.22,
+   0.16
+  ],
+  "grainAlpha": [
+   0.6,
+   -0.3
+  ],
+  "grainOpacity": 0.4,
+  "fibreRGB": [
+   0.55,
+   0.45,
+   0.3
+  ],
+  "fibreAlpha": [
+   0.18,
+   -0.08
+  ],
+  "grid": {
+   "size": 54,
+   "color": "#B9CDE4",
+   "width": 2,
+   "opacity": 0.55
+  }
+ },
+ "shape2": "#2E8B57"
+}

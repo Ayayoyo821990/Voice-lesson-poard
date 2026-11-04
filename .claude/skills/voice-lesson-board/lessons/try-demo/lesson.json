@@ -1,0 +1,412 @@
+{
+ "about": "try_it kinds. No coordinates.",
+ "seed": 9,
+ "frame": {
+  "w": 1080,
+  "h": 1920,
+  "fps": 30,
+  "tail": 0.8,
+  "margin": 60,
+  "center_block": true,
+  "safe": {
+   "top": 270,
+   "bottom": 480,
+   "left": 70,
+   "right": 140
+  },
+  "fit": {
+   "min_scale": 0.8,
+   "max_scale": 1.35
+  },
+  "auto_trim": true,
+  "pen": {
+   "max_speed": 1800,
+   "min_dur": 0.25,
+   "queue": 1.2
+  },
+  "idle": {
+   "max": 1.5
+  }
+ },
+ "captions": {
+  "size": 44,
+  "dir": "rtl"
+ },
+ "layout": {
+  "flow": true,
+  "gap": 26
+ },
+ "coverage": {
+  "strict": true,
+  "exempt": {}
+ },
+ "events": [
+  {
+   "id": "badge",
+   "tool": "badge",
+   "label": "subject",
+   "text": "علوم",
+   "color": "shape",
+   "y": 332,
+   "group": "badge",
+   "anchor": {
+    "segment": 1
+   },
+   "dur": 0.9
+  },
+  {
+   "id": "voice",
+   "tool": "voice_wave",
+   "label": "voice ring",
+   "x": 878,
+   "y": 332,
+   "size": 96,
+   "group": "voice",
+   "anchor": {
+    "segment": 1
+   },
+   "offset": 0.3,
+   "dur": 0.7
+  },
+  {
+   "id": "b1_step",
+   "tool": "text",
+   "label": "الخطوة ١ من ٣: اختار",
+   "text": "الخطوة ١ من ٣: اختار",
+   "size": 50,
+   "color": "shape",
+   "anchor": {
+    "segment": 1
+   },
+   "offset": 0.35,
+   "dur": 0.5,
+   "group": "steps",
+   "appear": false
+  },
+  {
+   "id": "b1_ti0t",
+   "tool": "text",
+   "label": "وقّف وجرّب!",
+   "text": "وقّف وجرّب!",
+   "anchor": {
+    "segment": 1
+   },
+   "dur": 0.5,
+   "size": 52,
+   "group": "try",
+   "color": "accent"
+  },
+  {
+   "id": "b1_ti0q",
+   "tool": "text",
+   "label": "أي واحد حيوان ثديي؟",
+   "text": "أي واحد حيوان ثديي؟",
+   "anchor": {
+    "segment": 1
+   },
+   "dur": 0.8,
+   "size": 64,
+   "group": "try",
+   "offset": 0.4
+  },
+  {
+   "id": "b1_ti0o0",
+   "tool": "text",
+   "label": "السمكة",
+   "text": "أ- السمكة",
+   "size": 60,
+   "gap": 36,
+   "anchor": {
+    "segment": 1
+   },
+   "offset": 0.9,
+   "dur": 0.5,
+   "group": "try"
+  },
+  {
+   "id": "b1_ti0o1",
+   "tool": "text",
+   "label": "الحوت",
+   "text": "ب- الحوت",
+   "size": 60,
+   "gap": 14,
+   "anchor": {
+    "segment": 1
+   },
+   "offset": 1.25,
+   "dur": 0.5,
+   "group": "try"
+  },
+  {
+   "id": "b1_ti0o2",
+   "tool": "text",
+   "label": "الضفدع",
+   "text": "ج- الضفدع",
+   "size": 60,
+   "gap": 14,
+   "anchor": {
+    "segment": 1
+   },
+   "offset": 1.6,
+   "dur": 0.5,
+   "group": "try"
+  },
+  {
+   "id": "b1_ti0k",
+   "tool": "countdown",
+   "label": "timer",
+   "from": 3,
+   "r": 70,
+   "digits": "ar",
+   "group": "try",
+   "anchor": {
+    "segment": 1
+   },
+   "offset": 2.15,
+   "dur": 0.5,
+   "gap": 30
+  },
+  {
+   "id": "b1_ti0r",
+   "tool": "highlight",
+   "label": "highlight b1_ti0o1",
+   "of": "b1_ti0o1",
+   "anchor": {
+    "segment": 2,
+    "word": "الحوت",
+    "index": 1
+   },
+   "dur": 0.5,
+   "group": "try",
+   "opacity": 0.3,
+   "fy": 0.6,
+   "width": 56,
+   "color": "accent"
+  },
+  {
+   "id": "b1_ti0s",
+   "tool": "sparkle",
+   "label": "right answer",
+   "of": "b1_ti0o1",
+   "group": "try",
+   "anchor": {
+    "segment": 2,
+    "word": "الحوت",
+    "index": 1
+   },
+   "offset": 0.4,
+   "dur": 0.5
+  },
+  {
+   "id": "b2_page",
+   "tool": "scene",
+   "label": "board 2",
+   "anchor": {
+    "segment": 3
+   },
+   "offset": -0.4,
+   "fade": 0.3
+  },
+  {
+   "id": "b2_step",
+   "tool": "text",
+   "label": "الخطوة ٢ من ٣: صح أو غلط",
+   "text": "الخطوة ٢ من ٣: صح أو غلط",
+   "size": 50,
+   "color": "shape",
+   "anchor": {
+    "segment": 3
+   },
+   "offset": 0.35,
+   "dur": 0.5,
+   "group": "steps",
+   "appear": true
+  },
+  {
+   "id": "b2_ti0t",
+   "tool": "text",
+   "label": "وقّف وجرّب!",
+   "text": "وقّف وجرّب!",
+   "anchor": {
+    "segment": 3
+   },
+   "dur": 0.5,
+   "size": 52,
+   "group": "try",
+   "color": "accent"
+  },
+  {
+   "id": "b2_ti0q",
+   "tool": "text",
+   "label": "الشمس كوكب.",
+   "text": "الشمس كوكب.",
+   "anchor": {
+    "segment": 3
+   },
+   "dur": 0.8,
+   "size": 64,
+   "group": "try",
+   "offset": 0.4
+  },
+  {
+   "id": "b2_ti0o0",
+   "tool": "text",
+   "label": "صح",
+   "text": "صح",
+   "size": 60,
+   "cx": 688,
+   "beside": false,
+   "gap": 36,
+   "anchor": {
+    "segment": 3
+   },
+   "offset": 0.9,
+   "dur": 0.5,
+   "group": "try",
+   "color": "shape"
+  },
+  {
+   "id": "b2_ti0o1",
+   "tool": "text",
+   "label": "غلط",
+   "text": "غلط",
+   "size": 60,
+   "cx": 323,
+   "beside": true,
+   "gap": 36,
+   "anchor": {
+    "segment": 3
+   },
+   "offset": 1.25,
+   "dur": 0.5,
+   "group": "try",
+   "color": "accent"
+  },
+  {
+   "id": "b2_ti0k",
+   "tool": "countdown",
+   "label": "timer",
+   "from": 3,
+   "r": 70,
+   "digits": "ar",
+   "group": "try",
+   "anchor": {
+    "segment": 3
+   },
+   "offset": 1.8,
+   "dur": 0.5,
+   "gap": 30
+  },
+  {
+   "id": "b2_ti0r",
+   "tool": "highlight",
+   "label": "highlight b2_ti0o1",
+   "of": "b2_ti0o1",
+   "anchor": {
+    "segment": 4,
+    "word": "غلط",
+    "index": 0
+   },
+   "dur": 0.5,
+   "group": "try",
+   "opacity": 0.3,
+   "fy": 0.6,
+   "width": 56,
+   "color": "accent"
+  },
+  {
+   "id": "b2_ti0s",
+   "tool": "sparkle",
+   "label": "right answer",
+   "of": "b2_ti0o1",
+   "group": "try",
+   "anchor": {
+    "segment": 4,
+    "word": "غلط",
+    "index": 0
+   },
+   "offset": 0.4,
+   "dur": 0.5
+  },
+  {
+   "id": "b3_page",
+   "tool": "scene",
+   "label": "board 3",
+   "anchor": {
+    "segment": 5
+   },
+   "offset": -0.4,
+   "fade": 0.3
+  },
+  {
+   "id": "b3_step",
+   "tool": "text",
+   "label": "الخطوة ٣ من ٣: كمّل الفراغ",
+   "text": "الخطوة ٣ من ٣: كمّل الفراغ",
+   "size": 50,
+   "color": "shape",
+   "anchor": {
+    "segment": 5
+   },
+   "offset": 0.35,
+   "dur": 0.5,
+   "group": "steps",
+   "appear": true
+  },
+  {
+   "id": "b3_ti0t",
+   "tool": "text",
+   "label": "وقّف وجرّب!",
+   "text": "وقّف وجرّب!",
+   "anchor": {
+    "segment": 5
+   },
+   "dur": 0.5,
+   "size": 52,
+   "group": "try",
+   "color": "accent"
+  },
+  {
+   "id": "b3_ti0q",
+   "tool": "text",
+   "label": "الماء بيغلي على ___ درجة",
+   "text": "الماء بيغلي على ___ درجة",
+   "anchor": {
+    "segment": 5
+   },
+   "dur": 0.8,
+   "size": 64,
+   "group": "try",
+   "offset": 0.4
+  },
+  {
+   "id": "b3_ti0k",
+   "tool": "countdown",
+   "label": "timer",
+   "from": 3,
+   "r": 70,
+   "digits": "ar",
+   "group": "try",
+   "anchor": {
+    "segment": 5
+   },
+   "offset": 1.1,
+   "dur": 0.5,
+   "gap": 30
+  },
+  {
+   "id": "b3_ti0a",
+   "tool": "text",
+   "label": "١٠٠",
+   "text": "١٠٠",
+   "anchor": {
+    "segment": 6
+   },
+   "dur": 0.7,
+   "size": 72,
+   "group": "try",
+   "color": "accent",
+   "gap": 20
+  }
+ ]
+}

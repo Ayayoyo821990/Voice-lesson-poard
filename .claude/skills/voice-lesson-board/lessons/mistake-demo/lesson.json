@@ -1,0 +1,384 @@
+{
+ "about": "Director plan for the common-mistake demo (synthetic timing). No coordinates.",
+ "seed": 44,
+ "frame": {
+  "w": 1080,
+  "h": 1920,
+  "fps": 30,
+  "tail": 0.8,
+  "margin": 60,
+  "center_block": true,
+  "safe": {
+   "top": 270,
+   "bottom": 480,
+   "left": 70,
+   "right": 140
+  },
+  "fit": {
+   "min_scale": 0.8,
+   "max_scale": 1.35
+  },
+  "auto_trim": true,
+  "pen": {
+   "max_speed": 1800,
+   "min_dur": 0.25,
+   "queue": 1.2
+  },
+  "idle": {
+   "max": 1.5
+  }
+ },
+ "captions": {
+  "size": 44,
+  "dir": "rtl"
+ },
+ "layout": {
+  "flow": true,
+  "gap": 26
+ },
+ "coverage": {
+  "strict": true,
+  "exempt": {}
+ },
+ "events": [
+  {
+   "id": "badge",
+   "tool": "badge",
+   "label": "subject",
+   "text": "رياضيات",
+   "color": "shape",
+   "y": 332,
+   "group": "badge",
+   "anchor": {
+    "segment": 1
+   },
+   "dur": 0.9
+  },
+  {
+   "id": "voice",
+   "tool": "voice_wave",
+   "label": "voice ring",
+   "x": 878,
+   "y": 332,
+   "size": 96,
+   "group": "voice",
+   "anchor": {
+    "segment": 1
+   },
+   "offset": 0.3,
+   "dur": 0.7
+  },
+  {
+   "id": "b1_q",
+   "tool": "label",
+   "label": "جمع الكسور",
+   "text": "جمع الكسور",
+   "size": 60,
+   "anchor": {
+    "segment": 1
+   },
+   "dur": 0.7,
+   "group": "labels"
+  },
+  {
+   "id": "b1_hero",
+   "tool": "expr",
+   "text": "1/4 + 2/4",
+   "anchor": {
+    "segment": 1
+   },
+   "group": "hero",
+   "h": 68,
+   "offset": 0.2,
+   "appear": false,
+   "cues": [],
+   "colors": []
+  },
+  {
+   "id": "b1_heroCard",
+   "tool": "card",
+   "label": "hero frame",
+   "of": "b1_hero",
+   "anchor": {
+    "segment": 1
+   },
+   "offset": 1.2,
+   "dur": 0.5,
+   "group": "hero",
+   "pad": 20
+  },
+  {
+   "id": "b1_step",
+   "tool": "text",
+   "label": "الخطوة ١ من ٢: نفس المقام",
+   "text": "الخطوة ١ من ٢: نفس المقام",
+   "size": 50,
+   "color": "shape",
+   "anchor": {
+    "segment": 1
+   },
+   "offset": 0.35,
+   "dur": 0.5,
+   "group": "steps",
+   "appear": false
+  },
+  {
+   "id": "b1_cm0n",
+   "tool": "text",
+   "label": "الغلطة المشهورة",
+   "text": "الغلطة المشهورة",
+   "anchor": {
+    "segment": 2
+   },
+   "dur": 0.7,
+   "size": 52,
+   "group": "note",
+   "color": "accent"
+  },
+  {
+   "id": "b1_cm0w",
+   "tool": "expr",
+   "text": "1/4 + 2/4 = 3/8",
+   "anchor": {
+    "segment": 2
+   },
+   "group": "mistake",
+   "h": 64,
+   "x": 700,
+   "wrong_on_purpose": true
+  },
+  {
+   "id": "b1_cm0x",
+   "tool": "strike",
+   "label": "cross the mistake out",
+   "of": "b1_cm0w",
+   "anchor": {
+    "segment": 3,
+    "word": "غلط",
+    "index": 1
+   },
+   "dur": 0.5,
+   "group": "mistake"
+  },
+  {
+   "id": "b1_cm0r",
+   "tool": "expr",
+   "text": "1/4 + 2/4 = 3/4",
+   "anchor": {
+    "segment": 4
+   },
+   "group": "mistake",
+   "h": 64,
+   "x": 360,
+   "beside": true,
+   "color": "accent"
+  },
+  {
+   "id": "b2_page",
+   "tool": "scene",
+   "label": "board 2",
+   "anchor": {
+    "segment": 5
+   },
+   "offset": -0.4,
+   "fade": 0.3
+  },
+  {
+   "id": "b2_step",
+   "tool": "text",
+   "label": "الخطوة ١ من ٢: نفس المقام (تابع)",
+   "text": "الخطوة ١ من ٢: نفس المقام (تابع)",
+   "size": 50,
+   "color": "shape",
+   "anchor": {
+    "segment": 5
+   },
+   "offset": 0.35,
+   "dur": 0.5,
+   "group": "steps",
+   "appear": true
+  },
+  {
+   "id": "b2_hero",
+   "tool": "expr",
+   "text": "1/4 + 2/4",
+   "anchor": {
+    "segment": 5
+   },
+   "group": "hero",
+   "h": 50,
+   "offset": 0.5,
+   "appear": true,
+   "cues": [],
+   "colors": []
+  },
+  {
+   "id": "b2_heroCard",
+   "tool": "card",
+   "label": "hero frame",
+   "of": "b2_hero",
+   "anchor": {
+    "segment": 5
+   },
+   "offset": 0.7,
+   "dur": 0.4,
+   "group": "hero",
+   "appear": true
+  },
+  {
+   "id": "b2_al1",
+   "tool": "label",
+   "label": "الجواب",
+   "text": "الجواب",
+   "size": 60,
+   "cx": 720,
+   "anchor": {
+    "segment": 5
+   },
+   "dur": 0.6,
+   "group": "labels",
+   "gap": 36
+  },
+  {
+   "id": "b2_av1",
+   "tool": "expr",
+   "text": "3/4",
+   "anchor": {
+    "segment": 5
+   },
+   "group": "hero",
+   "h": 100,
+   "x": 330,
+   "beside": true,
+   "color": "accent",
+   "offset": 0.6
+  },
+  {
+   "id": "b2_ac1",
+   "tool": "card",
+   "label": "frame b2_al1,b2_av1",
+   "of": [
+    "b2_al1",
+    "b2_av1"
+   ],
+   "anchor": {
+    "segment": 5
+   },
+   "dur": 0.45,
+   "group": "hero",
+   "offset": 1.2
+  },
+  {
+   "id": "b2_as1",
+   "tool": "sparkle",
+   "label": "sparkles",
+   "of": "b2_av1.0",
+   "group": "hero",
+   "anchor": {
+    "segment": 5
+   },
+   "offset": 1.7,
+   "dur": 0.5
+  },
+  {
+   "id": "b3_page",
+   "tool": "scene",
+   "label": "board 3",
+   "anchor": {
+    "segment": 6
+   },
+   "offset": -0.4,
+   "fade": 0.3
+  },
+  {
+   "id": "b3_step",
+   "tool": "text",
+   "label": "الخطوة ٢ من ٢: على الدائرة",
+   "text": "الخطوة ٢ من ٢: على الدائرة",
+   "size": 50,
+   "color": "shape",
+   "anchor": {
+    "segment": 6
+   },
+   "offset": 0.35,
+   "dur": 0.5,
+   "group": "steps",
+   "appear": true
+  },
+  {
+   "id": "b3_hero",
+   "tool": "expr",
+   "text": "3/4",
+   "anchor": {
+    "segment": 6
+   },
+   "group": "hero",
+   "h": 60,
+   "offset": 0.5,
+   "appear": true,
+   "cues": [],
+   "colors": []
+  },
+  {
+   "id": "b3_heroCard",
+   "tool": "card",
+   "label": "hero frame",
+   "of": "b3_hero",
+   "anchor": {
+    "segment": 6
+   },
+   "offset": 0.7,
+   "dur": 0.4,
+   "group": "hero",
+   "appear": true
+  },
+  {
+   "id": "b3_pie0",
+   "tool": "pie",
+   "label": "pie",
+   "r": 120,
+   "x": 720,
+   "parts": 4,
+   "group": "work",
+   "anchor": {
+    "segment": 6,
+    "word": "الدائرة",
+    "index": 2
+   },
+   "dur": 1
+  },
+  {
+   "id": "b3_ps0",
+   "tool": "pie_shade",
+   "label": "shade",
+   "pie": "b3_pie0",
+   "part": 0,
+   "count": 3,
+   "color": "accent",
+   "group": "work",
+   "anchor": {
+    "segment": 6,
+    "word": "قطع",
+    "index": 4
+   },
+   "offset": 0,
+   "dur": 0.8
+  },
+  {
+   "id": "b3_pf0",
+   "tool": "expr",
+   "text": "3/4",
+   "anchor": {
+    "segment": 6,
+    "word": "الدائرة",
+    "index": 2
+   },
+   "group": "work",
+   "h": 100,
+   "x": 330,
+   "beside": true,
+   "color": "accent",
+   "offset": 1.6
+  }
+ ]
+}

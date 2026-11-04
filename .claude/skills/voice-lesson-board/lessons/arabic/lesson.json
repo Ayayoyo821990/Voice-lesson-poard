@@ -1,0 +1,389 @@
+{
+ "about": "Director plan (Arabic): the three kinds of word as a comparison table. No coordinates.",
+ "seed": 32,
+ "frame": {
+  "w": 1080,
+  "h": 1920,
+  "fps": 30,
+  "tail": 0.8,
+  "margin": 60,
+  "center_block": true,
+  "safe": {
+   "top": 270,
+   "bottom": 480,
+   "left": 70,
+   "right": 140
+  },
+  "fit": {
+   "min_scale": 0.8,
+   "max_scale": 1.35
+  },
+  "auto_trim": true,
+  "pen": {
+   "max_speed": 1800,
+   "min_dur": 0.25,
+   "queue": 1.2
+  },
+  "idle": {
+   "max": 1.5
+  }
+ },
+ "captions": {
+  "size": 44,
+  "dir": "rtl"
+ },
+ "layout": {
+  "flow": true,
+  "gap": 26
+ },
+ "coverage": {
+  "strict": true,
+  "exempt": {}
+ },
+ "events": [
+  {
+   "id": "badge",
+   "tool": "badge",
+   "label": "subject",
+   "text": "لغة عربية",
+   "color": "shape",
+   "y": 332,
+   "group": "badge",
+   "anchor": {
+    "segment": 1
+   },
+   "dur": 0.9
+  },
+  {
+   "id": "voice",
+   "tool": "voice_wave",
+   "label": "voice ring",
+   "x": 878,
+   "y": 332,
+   "size": 96,
+   "group": "voice",
+   "anchor": {
+    "segment": 1
+   },
+   "offset": 0.3,
+   "dur": 0.7
+  },
+  {
+   "id": "b1_g0",
+   "tool": "text",
+   "label": "greeting",
+   "text": "مرحبًا يا أبطال!",
+   "size": 104,
+   "group": "greeting",
+   "in_block": false,
+   "center_in_frame": true,
+   "fade_out": {
+    "at": 1.45,
+    "dur": 0.3
+   },
+   "anchor": {
+    "segment": 1
+   },
+   "dur": 0.6
+  },
+  {
+   "id": "b1_ti1",
+   "tool": "title",
+   "label": "أنواع الكلمة",
+   "text": "أنواع الكلمة",
+   "anchor": {
+    "segment": 2
+   },
+   "dur": 0.8,
+   "size": 76,
+   "group": "title"
+  },
+  {
+   "id": "b1_tb2h0",
+   "tool": "label",
+   "label": "اسم",
+   "text": "اسم",
+   "size": 76,
+   "cx": 748,
+   "beside": false,
+   "color": "shape",
+   "anchor": {
+    "segment": 3,
+    "word": "اسمٌ",
+    "index": 6
+   },
+   "dur": 0.5,
+   "group": "table"
+  },
+  {
+   "id": "b1_tb2h1",
+   "tool": "label",
+   "label": "فعل",
+   "text": "فعل",
+   "size": 76,
+   "cx": 505,
+   "beside": true,
+   "color": "accent",
+   "anchor": {
+    "segment": 3,
+    "word": "وفعلٌ",
+    "index": 7
+   },
+   "dur": 0.5,
+   "group": "table"
+  },
+  {
+   "id": "b1_tb2h2",
+   "tool": "label",
+   "label": "حرف",
+   "text": "حرف",
+   "size": 76,
+   "cx": 262,
+   "beside": true,
+   "color": "accent",
+   "anchor": {
+    "segment": 3,
+    "word": "وحرف",
+    "index": 8
+   },
+   "dur": 0.5,
+   "group": "table"
+  },
+  {
+   "id": "b1_tb2m0",
+   "tool": "highlight",
+   "label": "highlight b1_tb2h0",
+   "of": "b1_tb2h0",
+   "anchor": {
+    "segment": 4,
+    "word": "الاسمُ",
+    "index": 0
+   },
+   "dur": 0.5,
+   "group": "table",
+   "opacity": 0.25,
+   "fy": 0.62,
+   "width": 40,
+   "color": "shape"
+  },
+  {
+   "id": "b1_tb2m1",
+   "tool": "highlight",
+   "label": "highlight b1_tb2h1",
+   "of": "b1_tb2h1",
+   "anchor": {
+    "segment": 5,
+    "word": "والفعلُ",
+    "index": 0
+   },
+   "dur": 0.5,
+   "group": "table",
+   "opacity": 0.25,
+   "fy": 0.62,
+   "width": 40,
+   "color": "accent"
+  },
+  {
+   "id": "b1_tb2m2",
+   "tool": "highlight",
+   "label": "highlight b1_tb2h2",
+   "of": "b1_tb2h2",
+   "anchor": {
+    "segment": 6,
+    "word": "والحرفُ",
+    "index": 0
+   },
+   "dur": 0.5,
+   "group": "table",
+   "opacity": 0.25,
+   "fy": 0.62,
+   "width": 40,
+   "color": "accent"
+  },
+  {
+   "id": "b1_tb2r0c0",
+   "tool": "text",
+   "label": "شيء",
+   "text": "شيء",
+   "size": 56,
+   "cx": 748,
+   "beside": false,
+   "anchor": {
+    "segment": 4,
+    "word": "شيء",
+    "index": 3
+   },
+   "dur": 0.5,
+   "group": "table",
+   "gap": 34
+  },
+  {
+   "id": "b1_tb2r0c1",
+   "tool": "text",
+   "label": "حدث",
+   "text": "حدث",
+   "size": 56,
+   "cx": 505,
+   "beside": true,
+   "anchor": {
+    "segment": 5,
+    "word": "حدث",
+    "index": 3
+   },
+   "dur": 0.5,
+   "group": "table",
+   "gap": 34
+  },
+  {
+   "id": "b1_tb2r0c2",
+   "tool": "text",
+   "label": "مع غيره",
+   "text": "مع غيره",
+   "size": 56,
+   "cx": 262,
+   "beside": true,
+   "anchor": {
+    "segment": 6,
+    "word": "غيره",
+    "index": 6
+   },
+   "dur": 0.5,
+   "group": "table",
+   "gap": 34
+  },
+  {
+   "id": "b1_tb2r1c0",
+   "tool": "text",
+   "label": "قلم",
+   "text": "قلم",
+   "size": 88,
+   "cx": 748,
+   "beside": false,
+   "color": "accent",
+   "anchor": {
+    "segment": 4,
+    "word": "قلم",
+    "index": 5
+   },
+   "dur": 0.5,
+   "group": "table",
+   "gap": 26
+  },
+  {
+   "id": "b1_tb2r1c1",
+   "tool": "text",
+   "label": "كتب",
+   "text": "كتب",
+   "size": 88,
+   "cx": 505,
+   "beside": true,
+   "color": "accent",
+   "anchor": {
+    "segment": 5,
+    "word": "كتب",
+    "index": 5
+   },
+   "dur": 0.5,
+   "group": "table",
+   "gap": 26
+  },
+  {
+   "id": "b1_tb2r1c2",
+   "tool": "text",
+   "label": "في",
+   "text": "في",
+   "size": 88,
+   "cx": 262,
+   "beside": true,
+   "color": "accent",
+   "anchor": {
+    "segment": 6,
+    "word": "في",
+    "index": 8
+   },
+   "dur": 0.5,
+   "group": "table",
+   "gap": 26
+  },
+  {
+   "id": "b1_m3",
+   "tool": "highlight",
+   "label": "highlight b1_tb2r1c0",
+   "of": [
+    "b1_tb2r1c0"
+   ],
+   "anchor": {
+    "segment": 7,
+    "word": "قلمٌ",
+    "index": 1
+   },
+   "dur": 0.5,
+   "group": "work",
+   "opacity": 0.25,
+   "fy": 0.5,
+   "width": 62,
+   "color": "shape"
+  },
+  {
+   "id": "b1_m4",
+   "tool": "highlight",
+   "label": "highlight b1_tb2r1c1",
+   "of": [
+    "b1_tb2r1c1"
+   ],
+   "anchor": {
+    "segment": 7,
+    "word": "وكتبَ",
+    "index": 3
+   },
+   "dur": 0.5,
+   "group": "work",
+   "opacity": 0.25,
+   "fy": 0.5,
+   "width": 62,
+   "color": "shape"
+  },
+  {
+   "id": "b1_m5",
+   "tool": "highlight",
+   "label": "highlight b1_tb2r1c2",
+   "of": [
+    "b1_tb2r1c2"
+   ],
+   "anchor": {
+    "segment": 7,
+    "word": "وفي",
+    "index": 5
+   },
+   "dur": 0.5,
+   "group": "work",
+   "opacity": 0.25,
+   "fy": 0.5,
+   "width": 62,
+   "color": "shape"
+  },
+  {
+   "id": "b1_ok6",
+   "tool": "check",
+   "label": "tick",
+   "group": "celebrate",
+   "anchor": {
+    "segment": 8
+   },
+   "dur": 0.5,
+   "gap": 40
+  },
+  {
+   "id": "b1_sp6",
+   "tool": "sparkle",
+   "label": "sparkles",
+   "of": "b1_ok6",
+   "group": "celebrate",
+   "anchor": {
+    "segment": 8
+   },
+   "offset": 0.55,
+   "dur": 0.5
+  }
+ ]
+}

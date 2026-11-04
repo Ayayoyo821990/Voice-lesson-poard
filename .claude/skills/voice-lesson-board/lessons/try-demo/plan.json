@@ -1,0 +1,52 @@
+{
+ "about": "try_it kinds. No coordinates.",
+ "subject": "علوم",
+ "lang": "ar",
+ "seed": 9,
+ "steps": [
+  {
+   "title": "اختار",
+   "beats": [
+    {
+     "do": "try_it",
+     "kind": "choice",
+     "text": "أي واحد حيوان ثديي؟",
+     "options": [
+      "السمكة",
+      "الحوت",
+      "الضفدع"
+     ],
+     "answer": 1,
+     "at": "1",
+     "reveal_at": "2:الحوت"
+    }
+   ]
+  },
+  {
+   "title": "صح أو غلط",
+   "beats": [
+    {
+     "do": "try_it",
+     "kind": "true_false",
+     "text": "الشمس كوكب.",
+     "answer": false,
+     "at": "3",
+     "reveal_at": "4:غلط"
+    }
+   ]
+  },
+  {
+   "title": "كمّل الفراغ",
+   "beats": [
+    {
+     "do": "try_it",
+     "kind": "blank",
+     "text": "الماء بيغلي على ___ درجة",
+     "answer": "١٠٠",
+     "at": "5",
+     "reveal_at": "6"
+    }
+   ]
+  }
+ ]
+}

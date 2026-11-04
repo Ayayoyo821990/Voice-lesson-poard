@@ -1,0 +1,40 @@
+{
+ "about": "Science proposal: ruled exercise-book paper with a red margin, leaf-green shapes, sunny orange accent, marker pen.",
+ "paper": "#FBFAF4",
+ "ink": "#1E2B24",
+ "shape": "#2E8B57",
+ "accent": "#F28C28",
+ "pen": "marker",
+ "font": "fonts/PlaypenSansArabic-Bold.ttf",
+ "minFontPx": 48,
+ "texture": {
+  "grainRGB": [
+   0.25,
+   0.22,
+   0.16
+  ],
+  "grainAlpha": [
+   0.5,
+   -0.3
+  ],
+  "grainOpacity": 0.35,
+  "fibreRGB": [
+   0.5,
+   0.45,
+   0.3
+  ],
+  "fibreAlpha": [
+   0.15,
+   -0.08
+  ],
+  "grid": {
+   "kind": "lines",
+   "size": 64,
+   "color": "#BCD3E8",
+   "width": 2,
+   "opacity": 0.8,
+   "margin_x": 120,
+   "margin_color": "#F0A3A3"
+  }
+ }
+}

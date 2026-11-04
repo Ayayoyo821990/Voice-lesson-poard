@@ -1,0 +1,133 @@
+{
+ "about": "Director plan: one beat of each general pattern. No coordinates.",
+ "subject": "علوم ولغة",
+ "lang": "ar",
+ "seed": 7,
+ "steps": [
+  {
+   "title": "دورة الماء",
+   "hero_text": "دورة الماء",
+   "hero_at": "1",
+   "beats": [
+    {
+     "do": "cycle",
+     "items": [
+      [
+       "تبخّر",
+       "2:تبخّر"
+      ],
+      [
+       "تكاثف",
+       "3:تكاثف"
+      ],
+      [
+       "هطول",
+       "4:المطر"
+      ],
+      [
+       "تجمّع",
+       "5:بتتجمّع"
+      ]
+     ],
+     "close_at": "5:وبترجع"
+    }
+   ]
+  },
+  {
+   "title": "كلمة اليوم",
+   "beats": [
+    {
+     "do": "vocab",
+     "word": "apple",
+     "at": "6:apple",
+     "picture": "apple",
+     "meaning": "تفاحة",
+     "meaning_at": "6:تفاحة",
+     "sentence": "An apple a day.",
+     "sentence_at": "7"
+    }
+   ]
+  },
+  {
+   "title": "الجذر",
+   "beats": [
+    {
+     "do": "word_parts",
+     "at": "8:كتب",
+     "parts": [
+      {
+       "text": "كَ",
+       "color": "answer"
+      },
+      {
+       "text": "تَ",
+       "color": "answer"
+      },
+      {
+       "text": "بَ",
+       "color": "answer"
+      }
+     ],
+     "gloss": "الجذر: ك ت ب",
+     "gloss_at": "8:جذرها"
+    },
+    {
+     "do": "word_parts",
+     "at": "9:كاتب",
+     "size": 96,
+     "parts": [
+      {
+       "text": "ك",
+       "color": "answer"
+      },
+      {
+       "text": "ا"
+      },
+      {
+       "text": "تب",
+       "color": "answer"
+      }
+     ]
+    },
+    {
+     "do": "word_parts",
+     "at": "9:ومكتوب",
+     "size": 96,
+     "parts": [
+      {
+       "text": "م"
+      },
+      {
+       "text": "كت",
+       "color": "answer"
+      },
+      {
+       "text": "و"
+      },
+      {
+       "text": "ب",
+       "color": "answer"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "summary": {
+  "items": [
+   [
+    "دورة الماء: ٤ مراحل",
+    "9$"
+   ],
+   [
+    "apple = تفاحة",
+    "9$"
+   ],
+   [
+    "الجذر: ك ت ب",
+    "9$"
+   ]
+  ],
+  "hold": 4
+ }
+}

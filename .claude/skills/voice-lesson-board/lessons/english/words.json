@@ -1,0 +1,255 @@
+{
+ "best_effort": true,
+ "model": "faster-whisper large-v3 (local cache, int8 cpu), matched to script.json by scripts/prepare.py",
+ "words": [
+  {
+   "word": "Hello",
+   "heard": "Hello,",
+   "start": 0.0,
+   "end": 0.2,
+   "confidence": 0.853
+  },
+  {
+   "word": "friends",
+   "heard": "friends!",
+   "start": 0.28,
+   "end": 0.56,
+   "confidence": 0.974
+  },
+  {
+   "word": "Today",
+   "heard": "Today,",
+   "start": 0.88,
+   "end": 1.38,
+   "confidence": 0.993
+  },
+  {
+   "word": "a",
+   "heard": "a",
+   "start": 1.659,
+   "end": 2.179,
+   "confidence": 0.521,
+   "refined": true
+  },
+  {
+   "word": "or",
+   "heard": "or",
+   "start": 2.18,
+   "end": 2.58,
+   "confidence": 0.97
+  },
+  {
+   "word": "an",
+   "heard": "an?",
+   "start": 2.58,
+   "end": 3.08,
+   "confidence": 0.992
+  },
+  {
+   "word": "We",
+   "heard": "We",
+   "start": 3.34,
+   "end": 3.941,
+   "confidence": 0.998
+  },
+  {
+   "word": "say",
+   "heard": "say",
+   "start": 3.94,
+   "end": 4.22,
+   "confidence": 1.0
+  },
+  {
+   "word": "an",
+   "heard": "an",
+   "start": 4.22,
+   "end": 4.54,
+   "confidence": 0.996
+  },
+  {
+   "word": "before",
+   "heard": "before",
+   "start": 4.54,
+   "end": 5.1,
+   "confidence": 0.999
+  },
+  {
+   "word": "a",
+   "heard": "a",
+   "start": 5.1,
+   "end": 5.4,
+   "confidence": 1.0
+  },
+  {
+   "word": "vowel",
+   "heard": "vowel",
+   "start": 5.4,
+   "end": 5.68,
+   "confidence": 1.0
+  },
+  {
+   "word": "sound",
+   "heard": "sound.",
+   "start": 5.68,
+   "end": 6.1,
+   "confidence": 1.0
+  },
+  {
+   "word": "a",
+   "heard": "a,",
+   "start": 6.321,
+   "end": 6.841,
+   "confidence": 0.741,
+   "refined": true
+  },
+  {
+   "word": "e",
+   "heard": "e,",
+   "start": 7.06,
+   "end": 7.5,
+   "confidence": 0.868
+  },
+  {
+   "word": "i",
+   "heard": "i,",
+   "start": 7.74,
+   "end": 8.1,
+   "confidence": 0.868
+  },
+  {
+   "word": "o",
+   "heard": "o,",
+   "start": 8.321,
+   "end": 8.781,
+   "confidence": 0.777,
+   "refined": true
+  },
+  {
+   "word": "u",
+   "heard": "u.",
+   "start": 8.9,
+   "end": 9.24,
+   "confidence": 0.998
+  },
+  {
+   "word": "An",
+   "heard": "An",
+   "start": 9.44,
+   "end": 10.08,
+   "confidence": 0.999
+  },
+  {
+   "word": "apple",
+   "heard": "apple.",
+   "start": 10.08,
+   "end": 10.48,
+   "confidence": 0.999
+  },
+  {
+   "word": "An",
+   "heard": "An",
+   "start": 10.66,
+   "end": 11.12,
+   "confidence": 1.0
+  },
+  {
+   "word": "egg",
+   "heard": "egg.",
+   "start": 11.12,
+   "end": 11.46,
+   "confidence": 1.0
+  },
+  {
+   "word": "We",
+   "heard": "We",
+   "start": 11.7,
+   "end": 12.184,
+   "confidence": 1.0
+  },
+  {
+   "word": "say",
+   "heard": "say",
+   "start": 12.18,
+   "end": 12.52,
+   "confidence": 1.0
+  },
+  {
+   "word": "a",
+   "heard": "a",
+   "start": 12.52,
+   "end": 12.74,
+   "confidence": 0.986
+  },
+  {
+   "word": "before",
+   "heard": "before",
+   "start": 12.74,
+   "end": 13.16,
+   "confidence": 1.0
+  },
+  {
+   "word": "the",
+   "heard": "the",
+   "start": 13.16,
+   "end": 13.58,
+   "confidence": 1.0
+  },
+  {
+   "word": "other",
+   "heard": "other",
+   "start": 13.58,
+   "end": 13.84,
+   "confidence": 1.0
+  },
+  {
+   "word": "sounds",
+   "heard": "sounds.",
+   "start": 13.84,
+   "end": 14.26,
+   "confidence": 1.0
+  },
+  {
+   "word": "A",
+   "heard": "A",
+   "start": 14.54,
+   "end": 15.03,
+   "confidence": 1.0
+  },
+  {
+   "word": "cat",
+   "heard": "cat.",
+   "start": 14.98,
+   "end": 15.42,
+   "confidence": 1.0
+  },
+  {
+   "word": "A",
+   "heard": "A",
+   "start": 15.54,
+   "end": 15.88,
+   "confidence": 1.0
+  },
+  {
+   "word": "dog",
+   "heard": "dog.",
+   "start": 15.88,
+   "end": 16.2,
+   "confidence": 1.0
+  },
+  {
+   "word": "Great",
+   "heard": "Great",
+   "start": 16.48,
+   "end": 17.1,
+   "confidence": 0.999
+  },
+  {
+   "word": "job",
+   "heard": "job!",
+   "start": 17.1,
+   "end": 17.36,
+   "confidence": 1.0
+  }
+ ],
+ "refined": "scripts/refine.py: each sentence heard alone with its own text as prompt (faster-whisper large-v3, local)"
+}

@@ -1,0 +1,14 @@
+{
+ "about": "Every colour and the font live here. Roles: paper (background), ink (text, numbers), shape (bars, circles, arrows), accent (ONE emphasis colour, e.g. the result).",
+ "paper": "#F7F2E7",
+ "ink": "#0B1929",
+ "shape": "#00557F",
+ "accent": "#FF5500",
+ "font": "fonts/PlaypenSansArabic-Bold.ttf",
+ "minFontPx": 48,
+ "texture": {
+  "about": "paper grain and fibre tints (feColorMatrix rows: rgb added, alpha = a0 * noise + a1)",
+  "grainRGB": [0.25, 0.22, 0.16], "grainAlpha": [0.75, -0.30], "grainOpacity": 0.55,
+  "fibreRGB": [0.55, 0.45, 0.30], "fibreAlpha": [0.30, -0.10]
+ }
+}

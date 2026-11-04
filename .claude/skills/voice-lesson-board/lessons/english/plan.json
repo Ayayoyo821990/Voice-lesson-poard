@@ -1,0 +1,81 @@
+{
+ "about": "Director plan (English): a or an? as a comparison table. No coordinates.",
+ "subject": "English",
+ "lang": "en",
+ "seed": 33,
+ "steps": [
+  {
+   "title": "a or an?",
+   "beats": [
+    {
+     "do": "greet",
+     "text": "Hello, friends!",
+     "at": "1",
+     "hold": 1.15
+    },
+    {
+     "do": "title",
+     "text": "a or an?",
+     "at": "2"
+    },
+    {
+     "do": "table",
+     "cols": [
+      {
+       "head": "an",
+       "at": "3:an",
+       "mark_at": "4:An"
+      },
+      {
+       "head": "a",
+       "at": "5:a",
+       "mark_at": "6:A"
+      }
+     ],
+     "rows": [
+      {
+       "cells": [
+        [
+         "a e i o u",
+         "3:vowel"
+        ],
+        [
+         "other sounds",
+         "5:other"
+        ]
+       ]
+      },
+      {
+       "cells": [
+        [
+         "an apple",
+         "4:An"
+        ],
+        [
+         "a cat",
+         "6:A"
+        ]
+       ]
+      },
+      {
+       "cells": [
+        [
+         "an egg",
+         "4:An#1"
+        ],
+        [
+         "a dog",
+         "6:A#1"
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "do": "celebrate",
+     "at": "7"
+    }
+   ]
+  }
+ ]
+}

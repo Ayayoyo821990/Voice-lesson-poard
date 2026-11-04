@@ -1,0 +1,693 @@
+{
+ "about": "Director plan: one beat of each general pattern. No coordinates.",
+ "seed": 7,
+ "frame": {
+  "w": 1080,
+  "h": 1920,
+  "fps": 30,
+  "tail": 4,
+  "margin": 60,
+  "center_block": true,
+  "safe": {
+   "top": 270,
+   "bottom": 480,
+   "left": 70,
+   "right": 140
+  },
+  "fit": {
+   "min_scale": 0.8,
+   "max_scale": 1.35
+  },
+  "auto_trim": true,
+  "pen": {
+   "max_speed": 1800,
+   "min_dur": 0.25,
+   "queue": 1.2
+  },
+  "idle": {
+   "max": 1.5
+  }
+ },
+ "captions": {
+  "size": 44,
+  "dir": "rtl"
+ },
+ "layout": {
+  "flow": true,
+  "gap": 26
+ },
+ "coverage": {
+  "strict": true,
+  "exempt": {}
+ },
+ "events": [
+  {
+   "id": "badge",
+   "tool": "badge",
+   "label": "subject",
+   "text": "علوم ولغة",
+   "color": "shape",
+   "y": 332,
+   "group": "badge",
+   "anchor": {
+    "segment": 1
+   },
+   "dur": 0.9
+  },
+  {
+   "id": "voice",
+   "tool": "voice_wave",
+   "label": "voice ring",
+   "x": 878,
+   "y": 332,
+   "size": 96,
+   "group": "voice",
+   "anchor": {
+    "segment": 1
+   },
+   "offset": 0.3,
+   "dur": 0.7
+  },
+  {
+   "id": "b1_hero",
+   "tool": "text",
+   "label": "دورة الماء",
+   "text": "دورة الماء",
+   "size": 72,
+   "anchor": {
+    "segment": 1
+   },
+   "group": "hero",
+   "offset": 0.2,
+   "dur": 0.7,
+   "appear": false
+  },
+  {
+   "id": "b1_heroCard",
+   "tool": "card",
+   "label": "hero frame",
+   "of": "b1_hero",
+   "anchor": {
+    "segment": 1
+   },
+   "offset": 1.2,
+   "dur": 0.5,
+   "group": "hero",
+   "pad": 20
+  },
+  {
+   "id": "b1_step",
+   "tool": "text",
+   "label": "الخطوة ١ من ٣: دورة الماء",
+   "text": "الخطوة ١ من ٣: دورة الماء",
+   "size": 50,
+   "color": "shape",
+   "anchor": {
+    "segment": 1
+   },
+   "offset": 0.35,
+   "dur": 0.5,
+   "group": "steps",
+   "appear": false
+  },
+  {
+   "id": "b1_cy0_0",
+   "tool": "text",
+   "label": "تبخّر",
+   "text": "تبخّر",
+   "size": 58,
+   "cx": 688,
+   "beside": false,
+   "anchor": {
+    "segment": 2,
+    "word": "تبخّر",
+    "index": 4
+   },
+   "offset": 0,
+   "dur": 0.6,
+   "group": "flow",
+   "gap": 30
+  },
+  {
+   "id": "b1_cy0_1",
+   "tool": "text",
+   "label": "تكاثف",
+   "text": "تكاثف",
+   "size": 58,
+   "cx": 323,
+   "beside": true,
+   "anchor": {
+    "segment": 3,
+    "word": "تكاثف",
+    "index": 4
+   },
+   "offset": 0.35,
+   "dur": 0.6,
+   "group": "flow",
+   "gap": 30
+  },
+  {
+   "id": "b1_cy0_2",
+   "tool": "text",
+   "label": "هطول",
+   "text": "هطول",
+   "size": 58,
+   "cx": 323,
+   "beside": false,
+   "anchor": {
+    "segment": 4,
+    "word": "المطر",
+    "index": 3
+   },
+   "offset": 0.35,
+   "dur": 0.6,
+   "group": "flow",
+   "gap": 150
+  },
+  {
+   "id": "b1_cy0_3",
+   "tool": "text",
+   "label": "تجمّع",
+   "text": "تجمّع",
+   "size": 58,
+   "cx": 688,
+   "beside": true,
+   "anchor": {
+    "segment": 5,
+    "word": "بتتجمّع",
+    "index": 1
+   },
+   "offset": 0.35,
+   "dur": 0.6,
+   "group": "flow",
+   "gap": 30
+  },
+  {
+   "id": "b1_cy0_a1",
+   "tool": "arrow",
+   "label": "then",
+   "from": {
+    "of": "b1_cy0_0",
+    "fx": 0,
+    "fy": 0.5,
+    "dx": -10
+   },
+   "to": {
+    "of": "b1_cy0_1",
+    "fx": 0.5,
+    "fy": 0.5
+   },
+   "gap": 12,
+   "anchor": {
+    "segment": 3,
+    "word": "تكاثف",
+    "index": 4
+   },
+   "dur": 0.4,
+   "group": "flow",
+   "color": "shape"
+  },
+  {
+   "id": "b1_cy0_a2",
+   "tool": "arrow",
+   "label": "then",
+   "from": {
+    "of": "b1_cy0_1",
+    "fx": 0.5,
+    "fy": 1,
+    "dy": 10
+   },
+   "to": {
+    "of": "b1_cy0_2",
+    "fx": 0.5,
+    "fy": 0.5
+   },
+   "gap": 12,
+   "anchor": {
+    "segment": 4,
+    "word": "المطر",
+    "index": 3
+   },
+   "dur": 0.4,
+   "group": "flow",
+   "color": "shape"
+  },
+  {
+   "id": "b1_cy0_a3",
+   "tool": "arrow",
+   "label": "then",
+   "from": {
+    "of": "b1_cy0_2",
+    "fx": 1,
+    "fy": 0.5,
+    "dx": 10
+   },
+   "to": {
+    "of": "b1_cy0_3",
+    "fx": 0.5,
+    "fy": 0.5
+   },
+   "gap": 12,
+   "anchor": {
+    "segment": 5,
+    "word": "بتتجمّع",
+    "index": 1
+   },
+   "dur": 0.4,
+   "group": "flow",
+   "color": "shape"
+  },
+  {
+   "id": "b1_cy0_a4",
+   "tool": "arrow",
+   "label": "then",
+   "from": {
+    "of": "b1_cy0_3",
+    "fx": 0.5,
+    "fy": 0,
+    "dy": -10
+   },
+   "to": {
+    "of": "b1_cy0_0",
+    "fx": 0.5,
+    "fy": 0.5
+   },
+   "gap": 12,
+   "anchor": {
+    "segment": 5,
+    "word": "وبترجع",
+    "index": 3
+   },
+   "dur": 0.4,
+   "group": "flow",
+   "color": "shape"
+  },
+  {
+   "id": "b2_page",
+   "tool": "scene",
+   "label": "board 2",
+   "anchor": {
+    "segment": 6
+   },
+   "offset": 0.81,
+   "fade": 0.3
+  },
+  {
+   "id": "b2_step",
+   "tool": "text",
+   "label": "الخطوة ٢ من ٣: كلمة اليوم",
+   "text": "الخطوة ٢ من ٣: كلمة اليوم",
+   "size": 50,
+   "color": "shape",
+   "anchor": {
+    "segment": 6,
+    "word": "apple",
+    "index": 2
+   },
+   "offset": 0.35,
+   "dur": 0.5,
+   "group": "steps",
+   "appear": true
+  },
+  {
+   "id": "b2_vw0",
+   "tool": "text",
+   "label": "apple",
+   "text": "apple",
+   "dir": "ltr",
+   "size": 110,
+   "color": "accent",
+   "anchor": {
+    "segment": 6,
+    "word": "apple",
+    "index": 2
+   },
+   "dur": 0.6,
+   "group": "vocab",
+   "gap": 30
+  },
+  {
+   "id": "b2_vp0_body",
+   "tool": "sketch",
+   "label": "body",
+   "paths": [
+    "M 100 60 C 60 30 10 50 12 110 C 14 170 60 210 100 190 C 140 210 186 170 188 110 C 190 50 140 30 100 60 Z"
+   ],
+   "color": "accent",
+   "group": "vocab",
+   "box": {
+    "x": 12,
+    "y": 12,
+    "w": 176,
+    "h": 188
+   },
+   "scale": 1.277,
+   "gap": 30,
+   "anchor": {
+    "segment": 6,
+    "word": "apple",
+    "index": 2
+   },
+   "offset": 0.6,
+   "dur": 0.6
+  },
+  {
+   "id": "b2_vp0_stem",
+   "tool": "sketch",
+   "label": "stem",
+   "paths": [
+    "M 100 60 C 98 40 104 22 112 12"
+   ],
+   "color": "ink",
+   "group": "vocab",
+   "frame_of": "b2_vp0_body",
+   "anchor": {
+    "segment": 6,
+    "word": "apple",
+    "index": 2
+   },
+   "offset": 1.1,
+   "dur": 0.6
+  },
+  {
+   "id": "b2_vp0_leaf",
+   "tool": "sketch",
+   "label": "leaf",
+   "paths": [
+    "M 106 36 C 124 14 150 16 160 24 C 146 40 124 44 106 36 Z"
+   ],
+   "color": "shape",
+   "group": "vocab",
+   "frame_of": "b2_vp0_body",
+   "anchor": {
+    "segment": 6,
+    "word": "apple",
+    "index": 2
+   },
+   "offset": 1.6,
+   "dur": 0.6
+  },
+  {
+   "id": "b2_vm0",
+   "tool": "text",
+   "label": "تفاحة",
+   "text": "تفاحة",
+   "anchor": {
+    "segment": 6,
+    "word": "تفاحة",
+    "index": 4
+   },
+   "dur": 0.7,
+   "size": 56,
+   "group": "vocab",
+   "offset": 0,
+   "gap": 26
+  },
+  {
+   "id": "b2_vs0",
+   "tool": "text",
+   "label": "An apple a day.",
+   "text": "An apple a day.",
+   "anchor": {
+    "segment": 7
+   },
+   "dur": 0.7,
+   "size": 56,
+   "group": "vocab",
+   "dir": "ltr",
+   "offset": 0,
+   "gap": 26
+  },
+  {
+   "id": "b2_vc0",
+   "tool": "card",
+   "label": "frame b2_vw0,b2_vp0_body,b2_vp0_stem,b2_vp0_leaf,b2_vm0,b2_vs0",
+   "of": [
+    "b2_vw0",
+    "b2_vp0_body",
+    "b2_vp0_stem",
+    "b2_vp0_leaf",
+    "b2_vm0",
+    "b2_vs0"
+   ],
+   "anchor": {
+    "segment": 7
+   },
+   "dur": 0.45,
+   "group": "vocab",
+   "offset": 1,
+   "pad": 26
+  },
+  {
+   "id": "b3_page",
+   "tool": "scene",
+   "label": "board 3",
+   "anchor": {
+    "segment": 8
+   },
+   "offset": 0.5,
+   "fade": 0.3
+  },
+  {
+   "id": "b3_step",
+   "tool": "text",
+   "label": "الخطوة ٣ من ٣: الجذر",
+   "text": "الخطوة ٣ من ٣: الجذر",
+   "size": 50,
+   "color": "shape",
+   "anchor": {
+    "segment": 8,
+    "word": "كتب",
+    "index": 2
+   },
+   "offset": 0.35,
+   "dur": 0.5,
+   "group": "steps",
+   "appear": true
+  },
+  {
+   "id": "b3_wp0",
+   "tool": "text",
+   "label": "كَتَبَ",
+   "text": "كَتَبَ",
+   "parts": [
+    {
+     "text": "كَ",
+     "color": "accent"
+    },
+    {
+     "text": "تَ",
+     "color": "accent"
+    },
+    {
+     "text": "بَ",
+     "color": "accent"
+    }
+   ],
+   "size": 130,
+   "anchor": {
+    "segment": 8,
+    "word": "كتب",
+    "index": 2
+   },
+   "dur": 0.8,
+   "group": "word"
+  },
+  {
+   "id": "b3_wp0g",
+   "tool": "text",
+   "label": "الجذر: ك ت ب",
+   "text": "الجذر: ك ت ب",
+   "anchor": {
+    "segment": 8,
+    "word": "جذرها",
+    "index": 3
+   },
+   "dur": 0.7,
+   "size": 52,
+   "group": "word",
+   "offset": 0,
+   "gap": 40
+  },
+  {
+   "id": "b3_wp1",
+   "tool": "text",
+   "label": "كاتب",
+   "text": "كاتب",
+   "parts": [
+    {
+     "text": "ك",
+     "color": "accent"
+    },
+    {
+     "text": "ا"
+    },
+    {
+     "text": "تب",
+     "color": "accent"
+    }
+   ],
+   "size": 96,
+   "anchor": {
+    "segment": 9,
+    "word": "كاتب",
+    "index": 3
+   },
+   "dur": 0.8,
+   "group": "word"
+  },
+  {
+   "id": "b3_wp2",
+   "tool": "text",
+   "label": "مكتوب",
+   "text": "مكتوب",
+   "parts": [
+    {
+     "text": "م"
+    },
+    {
+     "text": "كت",
+     "color": "accent"
+    },
+    {
+     "text": "و"
+    },
+    {
+     "text": "ب",
+     "color": "accent"
+    }
+   ],
+   "size": 96,
+   "anchor": {
+    "segment": 9,
+    "word": "ومكتوب",
+    "index": 4
+   },
+   "dur": 0.8,
+   "group": "word"
+  },
+  {
+   "id": "b4_page",
+   "tool": "scene",
+   "label": "board 4",
+   "anchor": {
+    "segment": 9,
+    "end": true
+   },
+   "offset": 0.05,
+   "fade": 0.3
+  },
+  {
+   "id": "b4_step",
+   "tool": "text",
+   "label": "الخلاصة",
+   "text": "الخلاصة",
+   "size": 50,
+   "color": "shape",
+   "anchor": {
+    "segment": 9,
+    "end": true
+   },
+   "offset": 0.35,
+   "dur": 0.5,
+   "group": "steps",
+   "appear": true
+  },
+  {
+   "id": "b4_bl0_0k",
+   "tool": "check",
+   "label": "tick",
+   "x": 760,
+   "scale": 0.55,
+   "anchor": {
+    "segment": 9,
+    "end": true
+   },
+   "offset": 0,
+   "dur": 0.35,
+   "group": "summary",
+   "gap": 40,
+   "color": "accent"
+  },
+  {
+   "id": "b4_bl0_0",
+   "tool": "text",
+   "label": "دورة الماء: ٤ مراحل",
+   "text": "دورة الماء: ٤ مراحل",
+   "size": 60,
+   "cx": 465,
+   "beside": true,
+   "anchor": {
+    "segment": 9,
+    "end": true
+   },
+   "offset": 0.3,
+   "dur": 0.6,
+   "group": "summary"
+  },
+  {
+   "id": "b4_bl0_1k",
+   "tool": "check",
+   "label": "tick",
+   "x": 760,
+   "scale": 0.55,
+   "anchor": {
+    "segment": 9,
+    "end": true
+   },
+   "offset": 0.9,
+   "dur": 0.35,
+   "group": "summary",
+   "gap": 30,
+   "color": "accent"
+  },
+  {
+   "id": "b4_bl0_1",
+   "tool": "text",
+   "label": "apple = تفاحة",
+   "text": "apple = تفاحة",
+   "size": 60,
+   "cx": 465,
+   "beside": true,
+   "anchor": {
+    "segment": 9,
+    "end": true
+   },
+   "offset": 1.2,
+   "dur": 0.6,
+   "group": "summary"
+  },
+  {
+   "id": "b4_bl0_2k",
+   "tool": "check",
+   "label": "tick",
+   "x": 760,
+   "scale": 0.55,
+   "anchor": {
+    "segment": 9,
+    "end": true
+   },
+   "offset": 1.8,
+   "dur": 0.35,
+   "group": "summary",
+   "gap": 30,
+   "color": "accent"
+  },
+  {
+   "id": "b4_bl0_2",
+   "tool": "text",
+   "label": "الجذر: ك ت ب",
+   "text": "الجذر: ك ت ب",
+   "size": 60,
+   "cx": 465,
+   "beside": true,
+   "anchor": {
+    "segment": 9,
+    "end": true
+   },
+   "offset": 2.1,
+   "dur": 0.6,
+   "group": "summary"
+  }
+ ]
+}
