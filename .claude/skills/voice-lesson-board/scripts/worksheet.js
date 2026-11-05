@@ -27,7 +27,7 @@ const esc = s => String(s).replace(/[&<>]/g, c => ({ '&': '&amp;', '<': '&lt;', 
 const digits = n => String(n).replace(/\d/g, d => '٠١٢٣٤٥٦٧٨٩'[d]);
 (async () => {
   const t0 = Date.now(), b = await chromium.launch({ executablePath: exe(), args: ['--disable-gpu', '--disable-partial-raster'] });
-  const page = await b.newPage({ viewport: { width: 540, height: 960 }, deviceScaleFactor: 2 });   // 2x: sharp on paper
+  const page = await b.newPage({ viewport: { width: lesson.frame.w / 2, height: lesson.frame.h / 2 }, deviceScaleFactor: 2 });   // 2x: sharp on paper
   let err = null; page.on('pageerror', e => { err = err || e.message; });
   await page.addInitScript(d => Object.assign(window, d), { LESSON: lesson, THEME: theme, SEGMENTS: segJ.segments, WORDS: words, ROOT: pathToFileURL(ROOT).href });
   await page.goto(pathToFileURL(path.join(ROOT, 'engine', 'board.html')).href);
@@ -55,7 +55,7 @@ const digits = n => String(n).replace(/\d/g, d => '٠١٢٣٤٥٦٧٨٩'[d]);
             border: '2.5px dashed #8A8F98', borderRadius: '10px', boxSizing: 'border-box', zIndex: 99 }); document.body.appendChild(d); } }
       return box; }, [B.until, info.boards ? B.k : undefined, hide, hide ? marksOn(hide) : []]);
     const pad = 14, x = Math.max(0, r.x - pad), y = Math.max(0, r.y - pad);
-    const clip = { x, y, width: Math.min(540 - x, r.w + 2 * pad), height: Math.min(960 - y, r.h + 2 * pad) };
+    const clip = { x, y, width: Math.min(lesson.frame.w / 2 - x, r.w + 2 * pad), height: Math.min(lesson.frame.h / 2 - y, r.h + 2 * pad) };
     return { img: (await page.screenshot({ type: 'jpeg', quality: 88, clip })).toString('base64'), ratio: clip.width / clip.height };
   };
   const marksOn = id => lesson.events.filter(e => [].concat(e.of || []).some(o => base(String(o)) === id)).map(e => e.id);   // a highlight on the hidden line would give it away

@@ -21,7 +21,7 @@ scripts/fidelity.py the teacher's transcript vs the final script: fails when a s
 scripts/pencheck.js the pen on every frame: jumps, two pens at once, blinks, pen during a page turn, pen outside the safe area
 scripts/pause.py    classroom versions from the same voice: --after N S (a pause for «وقّف وجرّب»), --slow EACH STEP; writes a new folder
 scripts/refine.py   second timing pass: each sentence heard alone with its own text as prompt (any language); only words.json changes
-scripts/cover.js    the cover image (1080x1920) for any lesson: a finished board + subject, title and steps in a card
+scripts/cover.js    the cover image (1080x1920, or a 1920x1080 YouTube thumbnail for a landscape lesson) for any lesson: a finished board + subject, title and steps in a card
 scripts/series.py   a long lesson → a series of parts cut between steps, each a full lesson folder
 scripts/still.js    stills of a lesson at given seconds, side by side (no video)
 library/sketches/   drawings in named parts for label_parts / vocab (plant, apple, egg)

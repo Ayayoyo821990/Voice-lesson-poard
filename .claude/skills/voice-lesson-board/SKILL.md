@@ -1,6 +1,6 @@
 ---
 name: voice-lesson-board
-description: Turn a teacher's recorded explanation (audio or video, Arabic or English) into a hand-drawn whiteboard lesson video for primary school — maths, science, Arabic, English or any visual lesson — vertical 1080x1920 for Reels/TikTok/Shorts, where every drawing starts on the exact word that says it. Includes the storyboard for the teacher to approve, «وقّف وجرّب» quizzes (choice, true/false, fill the blank) with a timer, «الغلطة المشهورة», a slow version, a series of reels, a cover image and a printable A4 worksheet from the same lesson. Use whenever a teacher (or someone making lessons for teachers) has a recording, a video of a lesson, or a lesson script and wants an explainer drawn by a pen, a whiteboard/sketch lesson, a worksheet or a cover for it — even if they never say "whiteboard" or "skill". Not for editing live talking-head footage.
+description: Turn a teacher's recorded explanation (audio or video, Arabic or English) into a hand-drawn whiteboard lesson video for primary school — maths, science, Arabic, English or any visual lesson — vertical 1080x1920 for Reels/TikTok/Shorts or landscape 1920x1080 for YouTube and long lessons, where every drawing starts on the exact word that says it. Includes the storyboard for the teacher to approve, «وقّف وجرّب» quizzes (choice, true/false, fill the blank) with a timer, «الغلطة المشهورة», a slow version, a series of reels, a cover image and a printable A4 worksheet from the same lesson. Use whenever a teacher (or someone making lessons for teachers) has a recording, a video of a lesson, or a lesson script and wants an explainer drawn by a pen, a whiteboard/sketch lesson, a worksheet or a cover for it — even if they never say "whiteboard" or "skill". Not for editing live talking-head footage.
 ---
 
 # Voice Lesson Board
@@ -11,7 +11,8 @@ Teachers are not programmers: talk about the lesson, the boards and the words �
 
 ## Rules
 
-- **Storyboard before any video**, then **one preview** (540x960), then the final 1080x1920 **only after the user says "go"**.
+- **Ask where the video will be shown** at the start: Reels/TikTok/Shorts → vertical (the default); YouTube, a class screen or a long lesson (several minutes) → `"format": "landscape"` in `plan.json`.
+- **Storyboard before any video**, then **one preview** (540x960, landscape 960x540), then the final 1080x1920 (landscape 1920x1080) **only after the user says "go"**.
 - Nothing the teacher explained is lost: every reason he gives keeps a drawing (coverage 100 %, `fidelity.py`).
 - Generating a voice (ElevenLabs) costs credits: ask before each generation.
 - Work inside this skill folder: every script refuses paths outside it. Lessons live in `lessons/<name>/`, everything generated in `out/`.
@@ -29,10 +30,10 @@ Never clone a real person's voice without that person's permission. A generated 
 
 1. **Recording.** Make `lessons/<name>/` with `voice.mp3` (from a video: `ffmpeg -i in.mp4 -vn -ac 1 -q:a 2 lessons/<name>/voice.mp3`) and a `theme.json` (copy one from `themes/`: science, math, math-squared, arabic, english). Optional `script.json` `{ "sentences": [...] }` if the teacher has the text.
 2. **Words and times.** `python scripts/prepare.py --dir lessons/<name> [--language en]` (no script → it writes `script.json` from the recording, for the teacher to correct), then `python scripts/refine.py --dir lessons/<name>` (each sentence heard again with its own text: exact times for the unsure words).
-3. **Plan.** Write `lessons/<name>/plan.json`: `subject`, `lang` ("ar" | "en"), `title`, `steps: [{ title, hero | hero_text, beats: [...] }]`. Each beat is a teaching pattern with anchors: `"7"` sentence 7 starts · `"7:word"` that word · `"7:word#1"` its 2nd time · `"7$"` sentence 7 ends. Every sentence must anchor at least one beat. Patterns:
+3. **Plan.** Write `lessons/<name>/plan.json`: `subject`, `lang` ("ar" | "en"), optional `format` ("portrait" default | "landscape" for YouTube), `title`, `steps: [{ title, hero | hero_text, beats: [...] }]`. Each beat is a teaching pattern with anchors: `"7"` sentence 7 starts · `"7:word"` that word · `"7:word#1"` its 2nd time · `"7$"` sentence 7 ends. Every sentence must anchor at least one beat. Patterns:
    - any subject: `greet`, `title`, `say`, `celebrate`, `table`, `sequence`, `cycle`, `label_parts` (a drawing from `library/sketches/`), `word_parts`, `vocab`, `underline`, `erase`, `common_mistake`, `try_it` (`kind`: choice | true_false | blank), `mark`, `note`; `plan.summary` adds «الخلاصة»;
    - maths: `write`, `answer`, `column`, `fraction_pie`, `divide_both`, `two_columns`, `intervals`, `intersection`, `check_on_line`, `sign_flip`, `tags`, `rule`, `rule_arrow`, `distribute_square`.
-   Options and examples of each: `references/REFERENCE.md`. Working plans to copy from: `lessons/science` (label_parts), `lessons/arabic` and `lessons/english` (table), `lessons/patterns-demo` (cycle, vocab, word_parts, summary), `lessons/try-demo` (quizzes), `lessons/mistake-demo` («الغلطة المشهورة»).
+   Options and examples of each: `references/REFERENCE.md`. Working plans to copy from: `lessons/science` (label_parts; `lessons/science-wide` is the same lesson in landscape for YouTube), `lessons/arabic` and `lessons/english` (table), `lessons/patterns-demo` (cycle, vocab, word_parts, summary), `lessons/try-demo` (quizzes), `lessons/mistake-demo` («الغلطة المشهورة»).
 4. **Direct and check.** `node scripts/direct.js --dir lessons/<name>` (writes `lesson.json`, fits or splits boards by itself, runs the checks) — must end in **PASS**. Then `node scripts/pencheck.js --dir lessons/<name>` — every line must be 0.
 5. **Storyboard to the teacher.** `node scripts/storyboard.js --dir lessons/<name>` → `out/storyboard-…/storyboard.png`. Send it; take changes in his words («لوح ٣: كبّر الرسمة») and edit the plan, then step 4 again.
 6. **One preview.** `node scripts/render.js --dir lessons/<name> --tag <name> --report` → `out/preview-<name>/video.mp4` (sync table: max delta ≤ 2 frames). Send it.

@@ -24,7 +24,7 @@ const { chromium } = require(pwPath);
 const lesson = JSON.parse(fs.readFileSync(F.lesson, 'utf8')), theme = JSON.parse(fs.readFileSync(F.theme, 'utf8'));
 const segJ = JSON.parse(fs.readFileSync(F.segments, 'utf8')), words = align(segJ.segments, JSON.parse(fs.readFileSync(F.words, 'utf8')).words);
 inside(theme.font); if (!fs.existsSync(path.resolve(ROOT, theme.font))) throw new Error(`theme font missing: ${theme.font}`);
-const CFG = { preview: { w: 540, h: 960 }, final: { w: lesson.frame.w, h: lesson.frame.h } }[mode];
+const CFG = { preview: { w: lesson.frame.w / 2, h: lesson.frame.h / 2 }, final: { w: lesson.frame.w, h: lesson.frame.h } }[mode];
 const FPS = lesson.frame.fps, MARGIN = lesson.frame.margin;
 const DUR = +(segJ.duration + lesson.frame.tail).toFixed(3), N = Math.round(DUR * FPS);
 
@@ -85,7 +85,7 @@ function findChrome() {   // external requirement: Playwright's cached Chromium 
     frames: N, fps: FPS, size: CFG, frameHash: hash.digest('hex'), fileHash: crypto.createHash('sha256').update(fs.readFileSync(video)).digest('hex'),
     sensor: { margin: MARGIN, violations, pass: violations === 0, worst },
     drift: Object.fromEntries(Object.entries(drift).map(([k, d]) => [k, +(d.hi - d.lo).toFixed(3)])),
-    layout: { DY: info.DY, block: info.block, blockCentre: info.blockCentre, blockTarget: info.blockTarget, safe: info.safe, minFontPx: info.minFontPx, themeMinFontPx: theme.minFontPx },
+    layout: { DY: info.DY, block: info.block, blockCentre: info.blockCentre, blockTarget: info.blockTarget, safe: info.safe, minFontPx: info.minFontPx, themeMinFontPx: lesson.frame.min_font || theme.minFontPx },
     arrows: info.arrows, math: info.math, playwright: path.relative(ROOT, pwPath), syntheticTiming: !!segJ.synthetic,
   };
   if (segJ.synthetic) console.log(' NOTE: segments.json is SYNTHETIC timing (engine test only, not a real voice)');

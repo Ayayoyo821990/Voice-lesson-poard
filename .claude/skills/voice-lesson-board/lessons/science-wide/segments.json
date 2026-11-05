@@ -1,0 +1,93 @@
+{
+ "audio": "proposals/science/voice.mp3",
+ "duration": 22.48,
+ "method": "scripts/prepare.py: ffmpeg silencedetect noise=-35dB d=0.25; sentence boundary = longest detected pause between the last word of a sentence and the first of the next (word times: faster-whisper large-v3, local).",
+ "segments": [
+  {
+   "id": 1,
+   "text": "أهلاً يا أبطال!",
+   "start": 0.0,
+   "end": 0.865
+  },
+  {
+   "id": 2,
+   "text": "اليوم بدنا نتعرف على أجزاء النبات.",
+   "start": 1.357,
+   "end": 3.557
+  },
+  {
+   "id": 3,
+   "text": "هاي الجذور، بتمتص المي من التربة.",
+   "start": 4.26,
+   "end": 7.129,
+   "inner_pauses": [
+    [
+     5.265,
+     5.809
+    ]
+   ]
+  },
+  {
+   "id": 4,
+   "text": "وهاي الساق، بتحمل النبتة وبتنقل المي.",
+   "start": 7.645,
+   "end": 10.776,
+   "inner_pauses": [
+    [
+     8.612,
+     8.901
+    ]
+   ]
+  },
+  {
+   "id": 5,
+   "text": "وهاي الأوراق، بتصنع الغذاء من ضو الشمس.",
+   "start": 11.288,
+   "end": 14.218,
+   "inner_pauses": [
+    [
+     12.152,
+     12.5
+    ]
+   ]
+  },
+  {
+   "id": 6,
+   "text": "وهاي الزهرة، منها بتطلع البذور.",
+   "start": 14.678,
+   "end": 16.929,
+   "inner_pauses": [
+    [
+     15.482,
+     15.771
+    ]
+   ]
+  },
+  {
+   "id": 7,
+   "text": "يعني: جذور، ساق، أوراق، وزهرة.",
+   "start": 17.425,
+   "end": 21.081,
+   "inner_pauses": [
+    [
+     17.905,
+     18.294
+    ],
+    [
+     18.751,
+     19.147
+    ],
+    [
+     19.643,
+     19.932
+    ]
+   ]
+  },
+  {
+   "id": 8,
+   "text": "سهل، صح؟",
+   "start": 21.512,
+   "end": 22.179
+  }
+ ]
+}

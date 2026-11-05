@@ -14,11 +14,16 @@ const dir = arg('dir'), JUMP = +arg('jump', 90);
 const D = path.resolve(ROOT, dir), J = f => JSON.parse(fs.readFileSync(path.join(D, f), 'utf8'));
 const lesson = J('lesson.json'), theme = J('theme.json'), segJ = J('segments.json'), words = align(segJ.segments, J('words.json').words);
 const { chromium } = require(require.resolve('playwright', { paths: [ROOT] }));
-const exe = () => { const r = path.join(process.env.LOCALAPPDATA || '', 'ms-playwright'); const d = fs.readdirSync(r).filter(d => d.startsWith('chromium_headless_shell-')).sort().reverse()[0];
-  return path.join(r, d, 'chrome-headless-shell-win64', 'chrome-headless-shell.exe'); };
+const exe = () => {                               // the cached Chromium headless shell: Windows, macOS or Linux
+  const roots = [process.env.PLAYWRIGHT_BROWSERS_PATH, path.join(process.env.LOCALAPPDATA || '', 'ms-playwright'), path.join(process.env.HOME || '', '.cache', 'ms-playwright'), path.join(process.env.HOME || '', 'Library', 'Caches', 'ms-playwright')].filter(Boolean);
+  for (const r of roots) { if (!fs.existsSync(r)) continue;
+    for (const d of fs.readdirSync(r).filter(d => d.startsWith('chromium_headless_shell-')).sort().reverse())
+      for (const sub of ['chrome-headless-shell-win64/chrome-headless-shell.exe', 'chrome-headless-shell-linux64/chrome-headless-shell', 'chrome-headless-shell-mac-arm64/chrome-headless-shell', 'chrome-headless-shell-mac-x64/chrome-headless-shell']) {
+        const f = path.join(r, d, sub); if (fs.existsSync(f)) return f; } }
+  throw new Error('no cached Chromium headless shell found (set PLAYWRIGHT_BROWSERS_PATH)'); };
 (async () => {
   const b = await chromium.launch({ executablePath: process.env.PW_EXE || exe(), args: ['--disable-gpu'] });
-  const page = await b.newPage({ viewport: { width: 540, height: 960 } });
+  const page = await b.newPage({ viewport: { width: lesson.frame.w / 2, height: lesson.frame.h / 2 } });
   await page.addInitScript(d => Object.assign(window, d), { LESSON: lesson, THEME: theme, SEGMENTS: segJ.segments, WORDS: words, ROOT: pathToFileURL(ROOT).href });
   await page.goto(pathToFileURL(path.join(ROOT, 'engine', 'board.html')).href);
   await page.evaluate(() => window.ready);

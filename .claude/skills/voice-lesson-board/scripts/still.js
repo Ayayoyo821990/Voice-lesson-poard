@@ -32,16 +32,16 @@ const exe = () => {
 (async () => {
   const ts = String(arg('t', '1')).split(',').map(Number);
   const b = await chromium.launch({ executablePath: exe(), args: ['--disable-gpu', '--disable-partial-raster'] });
-  const page = await b.newPage({ viewport: { width: 540, height: 960 } });
+  const page = await b.newPage({ viewport: { width: lesson.frame.w / 2, height: lesson.frame.h / 2 } });
   let err = null; page.on('pageerror', e => { err = err || e.message; });
   await page.addInitScript(d => Object.assign(window, d), { LESSON: lesson, THEME: theme, SEGMENTS: segJ.segments, WORDS: words, ROOT: pathToFileURL(ROOT).href });
   await page.goto(pathToFileURL(path.join(ROOT, 'engine', 'board.html')).href);
   await page.evaluate(() => window.ready).catch(e => { err = err || e.message; });
   if (err) { console.log(`the lesson does not build: ${err}`); await b.close(); process.exit(1); }
   if (process.argv.includes('--boards')) {          // --boards: every finished board as its own PNG (1080x1920, no pen, no captions)
-    await page.setViewportSize({ width: 540, height: 960 });
+    await page.setViewportSize({ width: lesson.frame.w / 2, height: lesson.frame.h / 2 });
     const info = await page.evaluate(() => window.info()), end = segJ.duration + lesson.frame.tail - 0.05, B = info.boards || [{ start: -1e9 }];
-    const big = await b.newPage({ viewport: { width: 540, height: 960 }, deviceScaleFactor: 2 });
+    const big = await b.newPage({ viewport: { width: lesson.frame.w / 2, height: lesson.frame.h / 2 }, deviceScaleFactor: 2 });
     await big.addInitScript(d => Object.assign(window, d), { LESSON: lesson, THEME: theme, SEGMENTS: segJ.segments, WORDS: words, ROOT: pathToFileURL(ROOT).href });
     await big.goto(pathToFileURL(path.join(ROOT, 'engine', 'board.html')).href); await big.evaluate(() => window.ready);
     for (let k = 0; k < B.length; k++) {

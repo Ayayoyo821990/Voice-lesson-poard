@@ -25,7 +25,7 @@ function findChrome() {
 }
 (async () => {
   const b = await chromium.launch({ executablePath: findChrome(), args: ['--disable-gpu'] });
-  const page = await b.newPage({ viewport: { width: 540, height: 960 } });
+  const page = await b.newPage({ viewport: { width: lesson.frame.w / 2, height: lesson.frame.h / 2 } });
   let err = null; page.on('pageerror', e => { err = err || e.message; });
   await page.addInitScript(d => Object.assign(window, d), { LESSON: lesson, THEME: theme, SEGMENTS: segJ.segments, WORDS: words, ROOT: pathToFileURL(ROOT).href });
   await page.goto(pathToFileURL(path.join(ROOT, 'engine', 'board.html')).href);

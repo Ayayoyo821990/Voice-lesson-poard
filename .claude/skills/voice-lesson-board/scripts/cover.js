@@ -1,5 +1,5 @@
 // node scripts/cover.js --dir lessons/science [--board 1]
-// The cover image for Reels / TikTok / YouTube Shorts (1080x1920 PNG), for any subject: a finished board of the lesson (no pen,
+// The cover image for Reels / TikTok / YouTube Shorts (1080x1920 PNG) — or, for a landscape lesson, the YouTube thumbnail (1920x1080) — for any subject: a finished board of the lesson (no pen,
 // no captions), with the subject, title and question in a card at the top of the centre 3:4 area (what the profile grid shows), over the badge.
 // Text: plan.json › cover { title, question, board } — or plan.title / the first "title" beat, and the first step's title.
 // Writes out/cover-<dir>/cover.png.
@@ -28,7 +28,7 @@ const exe = () => {
 };
 (async () => {
   const b = await chromium.launch({ executablePath: exe(), args: ['--disable-gpu', '--disable-partial-raster'] });
-  const page = await b.newPage({ viewport: { width: 540, height: 960 }, deviceScaleFactor: 2 });
+  const page = await b.newPage({ viewport: { width: lesson.frame.w / 2, height: lesson.frame.h / 2 }, deviceScaleFactor: 2 });
   let err = null; page.on('pageerror', e => { err = err || e.message; });
   await page.addInitScript(d => Object.assign(window, d), { LESSON: lesson, THEME: theme, SEGMENTS: segJ.segments, WORDS: words, ROOT: pathToFileURL(ROOT).href });
   await page.goto(pathToFileURL(path.join(ROOT, 'engine', 'board.html')).href);
@@ -44,7 +44,16 @@ const exe = () => {
     const veil = document.createElement('div');          // the board stays readable behind, but the title is what the eye meets
     Object.assign(veil.style, { position: 'fixed', inset: '0', background: T.paper, opacity: '0.12', zIndex: 98 });
     const card = document.createElement('div'); card.dir = ltr ? 'ltr' : 'rtl';
-    Object.assign(card.style, { position: 'fixed', left: '40px', right: '58px', top: '124px', zIndex: 99, background: T.paper, border: `5px solid ${T.shape}`, borderRadius: '26px',
+    const wide = innerWidth > innerHeight;              // landscape (YouTube thumbnail): the card on the reading side, the board moved to the other half
+    if (wide) {                                         // the whole board, smaller, in the half away from the card
+      const bd = document.getElementById('board'), m = bd.style.transform.match(/translate\([-0-9.]+px, ([-0-9.]+)px\)/), DY = m ? +m[1] : 0, s = 0.6, W = 1920, H = 1080;
+      const cx = ltr ? W * 0.72 : W * 0.28;
+      const tx = cx - s * W / 2, ty = s * DY + (1 - s) * H / 2, o = -600;   // o: the paper's own corner
+      bd.style.transform = `translate(${tx.toFixed(1)}px, ${ty.toFixed(1)}px) scale(${s})`;
+      const pp = document.getElementById('paper'); pp.style.transformOrigin = '0 0';   // the paper itself stays full size, where it was
+      pp.style.transform = `translate(${((o - tx) / s - o).toFixed(2)}px, ${((o - ty) / s - o).toFixed(2)}px) scale(${(1 / s).toFixed(5)})`; }
+    Object.assign(card.style, wide ? { position: 'fixed', [ltr ? 'left' : 'right']: '44px', width: '380px', top: '50%', transform: 'translateY(-50%)', zIndex: 99 } : { position: 'fixed', left: '40px', right: '58px', top: '124px', zIndex: 99 });
+    Object.assign(card.style, { background: T.paper, border: `5px solid ${T.shape}`, borderRadius: '26px',
       padding: '22px 18px 26px', textAlign: 'center', fontFamily: 'Pen, sans-serif', fontWeight: 700, color: T.ink, boxShadow: '0 6px 0 ' + T.shape + '33' });
     card.innerHTML = (subject ? `<div style="display:inline-block;font-size:18px;color:#fff;background:${T.shape};border-radius:999px;padding:2px 14px;margin-bottom:6px">${subject}</div>` : '') + `<div style="font-size:46px;line-height:1.35">${title}</div>` + (question ? `<div style="font-size:24px;line-height:1.5;margin-top:10px;color:${T.accent}">${question}</div>` : '');
     document.body.append(veil, card);

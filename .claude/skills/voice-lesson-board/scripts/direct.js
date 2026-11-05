@@ -20,7 +20,10 @@ const role = c => c ? (ROLE[c] || (() => { throw new Error(`colour "${c}": use f
 const clean = w => w.replace(/[،:.!؟?,]/g, '');
 // any subject, any language: plan.lang "ar" (right to left, Arabic-Indic step numbers) or "en"/… (left to right)
 const LANG = plan.lang || 'ar', LTR = LANG !== 'ar';
-const SAFE = plan.safe || { top: 270, bottom: 480, left: 70, right: 140 }, LO = SAFE.left + 70, HI = 1080 - SAFE.right - 70;   // usable width for rows
+// plan.format: "portrait" (default, 1080x1920 for Reels/TikTok/Shorts) or "landscape" (1920x1080 for YouTube, a class screen)
+const WIDE = ['landscape', 'youtube', 'wide'].includes(plan.format), FW = WIDE ? 1920 : 1080, FH = WIDE ? 1080 : 1920;
+const XO = (FW - 1080) / 2, X = v => v + XO;   // patterns are laid out on a 1080 column; landscape centres that column
+const SAFE = plan.safe || (WIDE ? { top: 40, bottom: 50, left: 110, right: 110 } : { top: 270, bottom: 480, left: 70, right: 140 }), LO = SAFE.left + 70, HI = FW - SAFE.right - 70;   // usable width for rows
 const colX = (n, i) => { const w = (HI - LO) / n; return Math.round(LTR ? LO + w * (i + 0.5) : HI - w * (i + 0.5)); };   // centre of column i of n, in reading order
 const SKETCH = name => { const f = path.join(ROOT, 'library', 'sketches', name + '.json'); if (!fs.existsSync(f)) throw new Error(`no drawing "${name}" in library/sketches`); return JSON.parse(fs.readFileSync(f, 'utf8')); };
 const boxOf = bs => { const x0 = Math.min(...bs.map(b => b[0])), y0 = Math.min(...bs.map(b => b[1])); return { x: x0, y: y0, w: Math.max(...bs.map(b => b[2])) - x0, h: Math.max(...bs.map(b => b[3])) - y0 }; };
@@ -59,15 +62,15 @@ function patterns(b, ctx) {
     case 'note':
       return [TXT('n' + ctx.n, b.text, b.at, { color: role(b.color) })];
     case 'sign_flip': {                             // a term crosses "=" : its sign flips (− → +)
-      const a = E('sf' + ctx.n + 'a', b.from || '-', b.at, { h: 84, x: 660, color: 'accent', group: 'note', durs: [0.3] });
-      const c = E('sf' + ctx.n + 'b', b.to || '+', b.at_to || b.at, { h: 84, x: 420, beside: true, color: 'accent', group: 'note', durs: [0.3], offset: b.at_to ? 0 : 0.5 });
+      const a = E('sf' + ctx.n + 'a', b.from || '-', b.at, { h: 84, x: X(660), color: 'accent', group: 'note', durs: [0.3] });
+      const c = E('sf' + ctx.n + 'b', b.to || '+', b.at_to || b.at, { h: 84, x: X(420), beside: true, color: 'accent', group: 'note', durs: [0.3], offset: b.at_to ? 0 : 0.5 });
       return [a, c, { id: id('sf' + ctx.n + 'x'), tool: 'arrow', label: 'sign flips', from: { of: a.id + '.0', fx: 0, dx: -16 }, to: { of: c.id + '.0', fx: 1 }, gap: 16, anchor: A(b.at_to || b.at), offset: 0.35, dur: 0.35, group: 'note' }];
     }
     case 'tags':                                    // name two things with their colours (شرط ١ blue on the right, شرط ٢ orange on the left)
-      return [{ id: id('t' + ctx.n + 'a'), tool: 'label', label: b.right, text: b.right, size: 54, cx: 730, color: 'shape', anchor: A(b.at), dur: 0.5, group: 'note' },
-              { id: id('t' + ctx.n + 'b'), tool: 'label', label: b.left, text: b.left, size: 54, cx: 330, beside: true, color: ROLE.second, anchor: A(b.at), offset: 0.3, dur: 0.5, group: 'note' }];
+      return [{ id: id('t' + ctx.n + 'a'), tool: 'label', label: b.right, text: b.right, size: 54, cx: X(730), color: 'shape', anchor: A(b.at), dur: 0.5, group: 'note' },
+              { id: id('t' + ctx.n + 'b'), tool: 'label', label: b.left, text: b.left, size: 54, cx: X(330), beside: true, color: ROLE.second, anchor: A(b.at), offset: 0.3, dur: 0.5, group: 'note' }];
     case 'rule_arrow': {                            // a rule drawn as "this → that" in a card (e.g. √□ → □ ≥ 0)
-      const a = E('ra' + ctx.n + 'a', b.from, b.at, { h: 66, x: 700, group: 'note' }), c = E('ra' + ctx.n + 'b', b.to, b.at_to || b.at, { h: 66, x: 360, beside: true, group: 'note', offset: b.at_to ? 0 : 0.6 });
+      const a = E('ra' + ctx.n + 'a', b.from, b.at, { h: 66, x: X(700), group: 'note' }), c = E('ra' + ctx.n + 'b', b.to, b.at_to || b.at, { h: 66, x: X(360), beside: true, group: 'note', offset: b.at_to ? 0 : 0.6 });
       return [a, c, { id: id('ra' + ctx.n + 'x'), tool: 'arrow', label: 'rule', from: { of: a.id + '.0', fx: 0, dx: -16 }, to: { of: c.id + '.0', fx: 1 }, gap: 16, anchor: A(b.at_to || b.at), offset: 0.3, dur: 0.35, group: 'note' },
               CARD('ra' + ctx.n + 'c', [a.id, c.id], b.at_to || b.at, { color: 'accent', pad: 18, group: 'note', offset: 0.8 })];
     }
@@ -75,13 +78,13 @@ function patterns(b, ctx) {
       { const e = E('r' + ctx.n, b.text, b.at, { h: 54, color: role(b.color), group: 'note' }); return [e, CARD('r' + ctx.n + 'c', e.id, b.at, { color: role(b.color) || 'accent', pad: 14, group: 'note', offset: 1.0, dur: 0.35 })]; }
     case 'two_columns': {                           // pairs of lines: right = first (blue), left = second (orange); either may be null
       const out = []; b.rows.forEach(([r, l], k) => {
-        if (r) out.push(E(`c${ctx.n}r${k}`, r[0], r[1], { h: 60, x: 730, color: 'shape', group: 'cond' }));
-        if (l) out.push(E(`c${ctx.n}l${k}`, l[0], l[1], { h: 60, x: 320, beside: !!r, color: ROLE.second, group: 'cond' }));
+        if (r) out.push(E(`c${ctx.n}r${k}`, r[0], r[1], { h: 60, x: X(730), color: 'shape', group: 'cond' }));
+        if (l) out.push(E(`c${ctx.n}l${k}`, l[0], l[1], { h: 60, x: X(320), beside: !!r, color: ROLE.second, group: 'cond' }));
       });
       return out;
     }
     case 'intervals': {                             // a number line, rays for each interval, and the interval written under it
-      const ln = { id: id('nl' + ctx.n), tool: 'number_line', label: 'number line', w: 640, x: 190, from: b.from ?? 0, to: b.to ?? 10, step: b.step ?? 1, major_every: b.major_every ?? 4, tick: 26,
+      const ln = { id: id('nl' + ctx.n), tool: 'number_line', label: 'number line', w: 640, x: X(190), from: b.from ?? 0, to: b.to ?? 10, step: b.step ?? 1, major_every: b.major_every ?? 4, tick: 26,
                    headroom: 44 + 40 * b.rays.length, group: 'line', anchor: A(b.at), dur: 1.1, labels: { values: (b.labels || ['0', '4', '8']).map(String), h: 50, dur: 0.5, anchor: A(b.at), offset: 1.8 } };   // labels after the line
       ctx.lines[b.name || 'line'] = { line: ln.id, rays: b.rays.map((_, k) => id(`ray${ctx.n}_${k}`)) };
       const out = [ln];
@@ -114,7 +117,7 @@ function patterns(b, ctx) {
     case 'divide_both':                             // write the division on both sides as fractions (like the teacher's board), then mark the cancel
       { const e = E('db' + ctx.n, b.text, b.at, { ...col, h: 62 }); return b.cancel_at ? [e, HL('dbh' + ctx.n, `${e.id}.${b.cancel_piece ?? 2}`, b.cancel_at, { fy: 0.72, width: 44, opacity: 0.3 })] : [e]; }
     case 'check_on_line': {                         // count from the start of the interval to the answer on a number line, then a dot on it
-      const ln = { id: id('cl' + ctx.n), tool: 'number_line', label: 'check line', w: 640, x: 190, from: 0, to: 10, step: 1, major_every: 4, tick: 26, headroom: 120, group: 'line', anchor: A(b.at), dur: 1.1, labels: { values: ['0', String(b.from), String(b.value)], h: 50, dur: 0.5, anchor: A(b.at), offset: 1.8 } };
+      const ln = { id: id('cl' + ctx.n), tool: 'number_line', label: 'check line', w: 640, x: X(190), from: 0, to: 10, step: 1, major_every: 4, tick: 26, headroom: 120, group: 'line', anchor: A(b.at), dur: 1.1, labels: { values: ['0', String(b.from), String(b.value)], h: 50, dur: 0.5, anchor: A(b.at), offset: 1.8 } };
       const out = [ln, { id: id('clr' + ctx.n), tool: 'ray', label: 'interval', line: ln.id, from: b.from, lift: 40, color: 'accent', group: 'line', anchor: A(b.at_ray || b.at), offset: b.at_ray ? 0 : 0.9, dur: 0.6 }];
       (b.counts || []).forEach(([v, at]) => out.push({ id: id(`hop${ctx.n}_${v}`), tool: 'hop', label: `${v - 1} → ${v}`, line: ln.id, from: v - 1, to: v, height: 52, lift: 52, color: 'shape', group: 'line', anchor: A(at), dur: 0.35 }));
       out.push({ id: id('cld' + ctx.n), tool: 'ray', label: 'the answer', line: ln.id, from: b.value, lift: 40, dot_only: true, r: 12, color: 'accent', group: 'line', anchor: A(b.at_dot), dur: 0.4 });
@@ -122,14 +125,14 @@ function patterns(b, ctx) {
       return out;
     }
     case 'answer': {                                // the solution in a frame, with a small celebration
-      const lab = { id: id('al' + ctx.n), tool: 'label', label: b.label, text: b.label, size: 60, cx: 720, anchor: A(b.at), dur: 0.6, group: 'labels', gap: 36 };
-      const v = E('av' + ctx.n, b.value, b.at_value || b.at, { h: 100, x: 330, beside: true, color: 'accent', group: 'hero', offset: b.at_value ? 0 : 0.6 });
+      const lab = { id: id('al' + ctx.n), tool: 'label', label: b.label, text: b.label, size: 60, cx: X(720), anchor: A(b.at), dur: 0.6, group: 'labels', gap: 36 };
+      const v = E('av' + ctx.n, b.value, b.at_value || b.at, { h: 100, x: X(330), beside: true, color: 'accent', group: 'hero', offset: b.at_value ? 0 : 0.6 });
       return [lab, v, CARD('ac' + ctx.n, [lab.id, v.id], b.at_value || b.at, { offset: 1.2 }),
               { id: id('as' + ctx.n), tool: 'sparkle', label: 'sparkles', of: v.id + '.0', group: 'hero', anchor: A(b.at_spark || b.at_value || b.at), offset: b.at_spark ? 0 : 1.7, dur: 0.5 }];
     }
     case 'common_mistake': {                        // «الغلطة المشهورة»: the usual mistake is written, crossed out in the accent colour, then corrected
-      const w = E('cm' + ctx.n + 'w', b.wrong, b.at, { h: 64, x: 700, wrong_on_purpose: true, group: 'mistake' });
-      const r = E('cm' + ctx.n + 'r', b.right, b.right_at, { h: 64, x: 360, beside: true, color: 'accent', group: 'mistake' });
+      const w = E('cm' + ctx.n + 'w', b.wrong, b.at, { h: 64, x: X(700), wrong_on_purpose: true, group: 'mistake' });
+      const r = E('cm' + ctx.n + 'r', b.right, b.right_at, { h: 64, x: X(360), beside: true, color: 'accent', group: 'mistake' });
       return [...(b.note ? [TXT('cm' + ctx.n + 'n', b.note, b.at, { color: 'accent' })] : []), w,
               { id: id('cm' + ctx.n + 'x'), tool: 'strike', label: 'cross the mistake out', of: w.id, anchor: A(b.strike_at), dur: 0.5, group: 'mistake' }, r];
     }
@@ -194,7 +197,9 @@ function patterns(b, ctx) {
       const S = SKETCH(b.sketch), base = (b.base ?? S.base ?? []), all = [...base, ...b.parts.map(q => q.part)];
       all.forEach(k => { if (!S.parts[k]) throw new Error(`label_parts: "${b.sketch}" has no part "${k}" (it has ${Object.keys(S.parts).join(', ')})`); });
       const bx = boxOf(all.map(k => S.parts[k].box)), side = b.side || (LTR ? 'right' : 'right'), labW = b.label_room ?? 300;
-      const sc = Math.min((HI - LO - labW - 40) / bx.w, (b.max_h ?? 640) / bx.h), cx = side === 'right' ? LO + bx.w * sc / 2 : HI - bx.w * sc / 2;
+      const sc = Math.min((HI - LO - labW - 40) / bx.w, (b.max_h ?? (WIDE ? 500 : 640)) / bx.h), dw = bx.w * sc;
+      const g0 = WIDE ? (LO + HI - dw - labW - 40) / 2 : LO, g1 = WIDE ? (LO + HI + dw + labW + 40) / 2 : HI;   // landscape: the drawing and its names together in the middle
+      const cx = side === 'right' ? g0 + dw / 2 : g1 - dw / 2;
       const pid = k => id(`lp${ctx.n}_${k}`), out = [];
       all.forEach((k, i) => { const P = S.parts[k], q = b.parts.find(q => q.part === k) || {};
         out.push({ id: pid(k), tool: 'sketch', label: k, paths: P.paths, color: role(q.color) || P.color || 'shape', ...(P.width ? { width: P.width } : {}), group: 'drawing',
@@ -231,9 +236,9 @@ function patterns(b, ctx) {
     case 'column':                                  // + − × in columns with carries/borrows (cues: {r0: "12:خمسة", ...})
       return [{ id: id('col' + ctx.n), tool: 'column', label: `${b.a} ${b.op} ${b.b}`, op: b.op, a: b.a, b: b.b, h: b.h ?? 130, group: 'work', anchor: A(b.at), cues: Object.fromEntries(Object.entries(b.cues || {}).map(([k, v]) => [k, A(v)])) }];
     case 'fraction_pie': {                          // a fraction shown on a pie: circle in parts, shade, the fraction beside it
-      const pie = { id: id('pie' + ctx.n), tool: 'pie', label: 'pie', r: 120, x: 720, parts: b.den, group: 'work', anchor: A(b.at), dur: 1.0 };
+      const pie = { id: id('pie' + ctx.n), tool: 'pie', label: 'pie', r: 120, x: X(720), parts: b.den, group: 'work', anchor: A(b.at), dur: 1.0 };
       return [pie, { id: id('ps' + ctx.n), tool: 'pie_shade', label: 'shade', pie: pie.id, part: 0, count: b.num, color: 'accent', group: 'work', anchor: A(b.at_shade || b.at), offset: b.at_shade ? 0 : 1.1, dur: 0.8 },
-              E('pf' + ctx.n, `${b.num}/${b.den}`, b.at_fraction || b.at, { h: 100, x: 330, beside: true, color: 'accent', offset: b.at_fraction ? 0 : 1.6 })];
+              E('pf' + ctx.n, `${b.num}/${b.den}`, b.at_fraction || b.at, { h: 100, x: X(330), beside: true, color: 'accent', offset: b.at_fraction ? 0 : 1.6 })];
     }
   }
   throw new Error(`beat "${b.do}" is not a teaching pattern (any subject: greet, title, say, celebrate, table, sequence, cycle, label_parts, word_parts, vocab, bullets, underline, erase, common_mistake, try_it, mark, note; maths: write, sign_flip, tags, rule_arrow, rule, two_columns, intervals, intersection, distribute_square, divide_both, check_on_line, answer, column, fraction_pie)`);
@@ -241,8 +246,8 @@ function patterns(b, ctx) {
 
 // ---- boards: one per step part; a step may be split in two when its board is too tall
 function compile(steps) {
-  const ev = [{ id: 'badge', tool: 'badge', label: 'subject', text: plan.subject, color: 'shape', y: 332, group: 'badge', anchor: { segment: 1 }, dur: 0.9 },
-              { id: 'voice', tool: 'voice_wave', label: 'voice ring', x: 878, y: 332, size: 96, group: 'voice', anchor: { segment: 1 }, offset: 0.3, dur: 0.7 }];
+  const ev = [{ id: 'badge', tool: 'badge', label: 'subject', text: plan.subject, color: 'shape', y: SAFE.top + 62, group: 'badge', anchor: { segment: 1 }, dur: 0.9 },
+              { id: 'voice', tool: 'voice_wave', label: 'voice ring', x: FW - SAFE.right - 62, y: SAFE.top + 62, size: 96, group: 'voice', anchor: { segment: 1 }, offset: 0.3, dur: 0.7 }];
   const total = new Set(steps.filter(s => !s.summary).map(s => s.n)).size, lines = {};
   used.clear();
   steps.forEach((st, k) => {
@@ -296,7 +301,7 @@ function write() {
   if (LTR) events.forEach(e => { if (['text', 'label', 'title', 'badge'].includes(e.tool) && !e.dir && !e._rtl) e.dir = 'ltr'; });
   events.forEach(e => delete e._rtl);
   const lesson = { about: plan.about || `Directed by scripts/direct.js from ${dir}/plan.json`, seed: plan.seed || 1, variables: plan.variables,
-    frame: { w: 1080, h: 1920, fps: 30, tail: Math.max(0.8, (plan.summary && plan.summary.hold) || 0, plan.series && plan.series.next ? 2.5 : 0), margin: 60, center_block: true, safe: plan.safe || { top: 270, bottom: 480, left: 70, right: 140 }, fit: { min_scale: 0.8, max_scale: 1.35 }, auto_trim: true, pen: { max_speed: 1800, min_dur: 0.25, queue: 1.2 }, idle: { max: plan.max_idle ?? 1.5 } },
+    frame: { w: FW, h: FH, ...(WIDE ? { min_font: plan.min_font ?? 36 } : {}), fps: 30, tail: Math.max(0.8, (plan.summary && plan.summary.hold) || 0, plan.series && plan.series.next ? 2.5 : 0), margin: 60, center_block: true, safe: SAFE, fit: { min_scale: WIDE ? 0.7 : 0.8, max_scale: 1.35 }, auto_trim: true, pen: { max_speed: 1800, min_dur: 0.25, queue: 1.2 }, idle: { max: plan.max_idle ?? 1.5 } },
     captions: plan.captions === false ? undefined : { size: 44, dir: LTR ? 'ltr' : 'rtl', ...(plan.captions || {}) }, layout: { flow: true, gap: 26 }, coverage: { strict: true, exempt: plan.exempt || {} }, events };
   fs.writeFileSync(path.join(D, 'lesson.json'), JSON.stringify(lesson, null, 1));
   return steps;

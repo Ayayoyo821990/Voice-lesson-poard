@@ -1,0 +1,289 @@
+{
+ "best_effort": true,
+ "model": "faster-whisper large-v3 (local cache, int8 cpu), matched to script.json by scripts/prepare.py",
+ "words": [
+  {
+   "word": "أهلاً",
+   "heard": "أهلاً",
+   "start": 0.0,
+   "end": 0.28,
+   "confidence": 0.928
+  },
+  {
+   "word": "يا",
+   "heard": "يا",
+   "start": 0.3,
+   "end": 0.4,
+   "confidence": 1.0,
+   "refined": true
+  },
+  {
+   "word": "أبطال",
+   "heard": "أبطال،",
+   "start": 0.38,
+   "end": 0.92,
+   "confidence": 0.911
+  },
+  {
+   "word": "اليوم",
+   "heard": "اليوم",
+   "start": 0.92,
+   "end": 1.72,
+   "confidence": 1.0
+  },
+  {
+   "word": "بدنا",
+   "heard": "بدنا",
+   "start": 1.72,
+   "end": 2.0,
+   "confidence": 0.994
+  },
+  {
+   "word": "نتعرف",
+   "heard": "نتعرف",
+   "start": 2.0,
+   "end": 2.44,
+   "confidence": 0.999
+  },
+  {
+   "word": "على",
+   "heard": "على",
+   "start": 2.44,
+   "end": 2.66,
+   "confidence": 1.0
+  },
+  {
+   "word": "أجزاء",
+   "heard": "أجزاء",
+   "start": 2.66,
+   "end": 3.14,
+   "confidence": 1.0
+  },
+  {
+   "word": "النبات",
+   "heard": "النبات.",
+   "start": 3.14,
+   "end": 3.64,
+   "confidence": 1.0
+  },
+  {
+   "word": "هاي",
+   "heard": "هاي",
+   "start": 3.74,
+   "end": 4.5,
+   "confidence": 0.992
+  },
+  {
+   "word": "الجذور",
+   "heard": "الجذور،",
+   "start": 4.5,
+   "end": 5.36,
+   "confidence": 0.982
+  },
+  {
+   "word": "بتمتص",
+   "heard": "بتمتص",
+   "start": 5.36,
+   "end": 6.12,
+   "confidence": 0.938
+  },
+  {
+   "word": "المي",
+   "heard": "المي",
+   "start": 6.12,
+   "end": 6.44,
+   "confidence": 0.933
+  },
+  {
+   "word": "من",
+   "heard": "من",
+   "start": 6.44,
+   "end": 6.62,
+   "confidence": 0.995
+  },
+  {
+   "word": "التربة",
+   "heard": "التربة.",
+   "start": 6.62,
+   "end": 7.16,
+   "confidence": 0.999
+  },
+  {
+   "word": "وهاي",
+   "heard": "وهاي",
+   "start": 7.22,
+   "end": 7.92,
+   "confidence": 0.884
+  },
+  {
+   "word": "الساق",
+   "heard": "الساق،",
+   "start": 7.92,
+   "end": 8.64,
+   "confidence": 0.86
+  },
+  {
+   "word": "بتحمل",
+   "heard": "بتحمل",
+   "start": 8.64,
+   "end": 9.36,
+   "confidence": 0.996
+  },
+  {
+   "word": "النبتة",
+   "heard": "النبتة",
+   "start": 9.36,
+   "end": 9.82,
+   "confidence": 0.989
+  },
+  {
+   "word": "وبتنقل",
+   "heard": "وبتنقل",
+   "start": 9.82,
+   "end": 10.42,
+   "confidence": 0.985
+  },
+  {
+   "word": "المي",
+   "heard": "المي.",
+   "start": 10.42,
+   "end": 10.76,
+   "confidence": 1.0
+  },
+  {
+   "word": "وهاي",
+   "heard": "وهاي",
+   "start": 10.86,
+   "end": 11.5,
+   "confidence": 0.998
+  },
+  {
+   "word": "الأوراق",
+   "heard": "الأوراق،",
+   "start": 11.5,
+   "end": 12.18,
+   "confidence": 1.0
+  },
+  {
+   "word": "بتصنع",
+   "heard": "بتصنع",
+   "start": 12.18,
+   "end": 12.74,
+   "confidence": 0.998
+  },
+  {
+   "word": "الغذاء",
+   "heard": "الغذاء",
+   "start": 12.74,
+   "end": 13.28,
+   "confidence": 0.997
+  },
+  {
+   "word": "من",
+   "heard": "من",
+   "start": 13.28,
+   "end": 13.44,
+   "confidence": 1.0
+  },
+  {
+   "word": "ضو",
+   "heard": "ضو",
+   "start": 13.44,
+   "end": 13.68,
+   "confidence": 0.997
+  },
+  {
+   "word": "الشمس",
+   "heard": "الشمس.",
+   "start": 13.68,
+   "end": 14.26,
+   "confidence": 0.991
+  },
+  {
+   "word": "وهاي",
+   "heard": "وهاي",
+   "start": 14.28,
+   "end": 14.88,
+   "confidence": 0.998
+  },
+  {
+   "word": "الزهرة",
+   "heard": "الزهرة،",
+   "start": 14.88,
+   "end": 15.48,
+   "confidence": 0.999
+  },
+  {
+   "word": "منها",
+   "heard": "منها",
+   "start": 15.48,
+   "end": 15.96,
+   "confidence": 1.0
+  },
+  {
+   "word": "بتطلع",
+   "heard": "بتطلع",
+   "start": 15.96,
+   "end": 16.5,
+   "confidence": 0.995
+  },
+  {
+   "word": "البذور",
+   "heard": "البذور.",
+   "start": 16.5,
+   "end": 16.92,
+   "confidence": 1.0
+  },
+  {
+   "word": "يعني",
+   "heard": "يعني",
+   "start": 17.02,
+   "end": 17.82,
+   "confidence": 1.0
+  },
+  {
+   "word": "جذور",
+   "heard": "جذور،",
+   "start": 17.82,
+   "end": 18.82,
+   "confidence": 0.972
+  },
+  {
+   "word": "ساق",
+   "heard": "ساق،",
+   "start": 18.82,
+   "end": 19.66,
+   "confidence": 1.0
+  },
+  {
+   "word": "أوراق",
+   "heard": "أوراق،",
+   "start": 19.66,
+   "end": 20.48,
+   "confidence": 0.986
+  },
+  {
+   "word": "وزهرة",
+   "heard": "وزهرة.",
+   "start": 20.48,
+   "end": 21.06,
+   "confidence": 1.0
+  },
+  {
+   "word": "سهل",
+   "heard": "سهل،",
+   "start": 21.512,
+   "end": 21.822,
+   "confidence": 1.0,
+   "refined": true
+  },
+  {
+   "word": "صح",
+   "heard": "صح؟",
+   "start": 21.8,
+   "end": 22.18,
+   "confidence": 0.999
+  }
+ ],
+ "refined": "scripts/refine.py: each sentence heard alone with its own text as prompt (faster-whisper large-v3, local)"
+}

@@ -1,0 +1,590 @@
+{
+ "about": "Director plan (science): parts of a plant. No coordinates: the drawing comes from library/sketches/plant.json, labels are placed beside their part.",
+ "seed": 34,
+ "frame": {
+  "w": 1920,
+  "h": 1080,
+  "min_font": 36,
+  "fps": 30,
+  "tail": 0.8,
+  "margin": 60,
+  "center_block": true,
+  "safe": {
+   "top": 40,
+   "bottom": 50,
+   "left": 110,
+   "right": 110
+  },
+  "fit": {
+   "min_scale": 0.8,
+   "max_scale": 1.35
+  },
+  "auto_trim": true,
+  "pen": {
+   "max_speed": 1800,
+   "min_dur": 0.25,
+   "queue": 1.2
+  },
+  "idle": {
+   "max": 1.5
+  }
+ },
+ "captions": {
+  "size": 44,
+  "dir": "rtl"
+ },
+ "layout": {
+  "flow": true,
+  "gap": 26
+ },
+ "coverage": {
+  "strict": true,
+  "exempt": {}
+ },
+ "events": [
+  {
+   "id": "badge",
+   "tool": "badge",
+   "label": "subject",
+   "text": "علوم",
+   "color": "shape",
+   "y": 102,
+   "group": "badge",
+   "anchor": {
+    "segment": 1
+   },
+   "dur": 0.9
+  },
+  {
+   "id": "voice",
+   "tool": "voice_wave",
+   "label": "voice ring",
+   "x": 1748,
+   "y": 102,
+   "size": 96,
+   "group": "voice",
+   "anchor": {
+    "segment": 1
+   },
+   "offset": 0.3,
+   "dur": 0.7
+  },
+  {
+   "id": "b1_g0",
+   "tool": "text",
+   "label": "greeting",
+   "text": "أهلاً يا أبطال!",
+   "size": 104,
+   "group": "greeting",
+   "in_block": false,
+   "center_in_frame": true,
+   "fade_out": {
+    "at": 1.2,
+    "dur": 0.3
+   },
+   "anchor": {
+    "segment": 1
+   },
+   "dur": 0.6
+  },
+  {
+   "id": "b1_ti1",
+   "tool": "title",
+   "label": "أجزاء النبات",
+   "text": "أجزاء النبات",
+   "anchor": {
+    "segment": 2
+   },
+   "dur": 0.8,
+   "size": 76,
+   "group": "title"
+  },
+  {
+   "id": "b1_lp2_soil",
+   "tool": "sketch",
+   "label": "soil",
+   "paths": [
+    "M 10 400 C 90 396 170 404 250 398 C 300 395 340 401 380 399"
+   ],
+   "color": "ink",
+   "group": "drawing",
+   "box": {
+    "x": -12,
+    "y": -12,
+    "w": 392,
+    "h": 558
+   },
+   "scale": 0.896,
+   "cx": 790,
+   "gap": 34,
+   "anchor": {
+    "segment": 2,
+    "word": "النبات",
+    "index": 5
+   },
+   "dur": 0.5
+  },
+  {
+   "id": "b1_lp2_roots",
+   "tool": "sketch",
+   "label": "roots",
+   "paths": [
+    "M 200 402 C 198 440 186 480 160 520",
+    "M 200 410 C 214 450 236 486 258 530",
+    "M 199 420 C 180 450 150 466 118 478",
+    "M 201 422 C 224 448 262 456 292 470",
+    "M 160 520 C 150 534 140 540 128 546"
+   ],
+   "color": "ink",
+   "group": "drawing",
+   "frame_of": "b1_lp2_soil",
+   "anchor": {
+    "segment": 3,
+    "word": "الجذور",
+    "index": 1
+   },
+   "dur": 0.9
+  },
+  {
+   "id": "b1_lp2_stem",
+   "tool": "sketch",
+   "label": "stem",
+   "paths": [
+    "M 200 398 C 196 330 206 250 200 175"
+   ],
+   "color": "shape",
+   "width": 10,
+   "group": "drawing",
+   "frame_of": "b1_lp2_soil",
+   "anchor": {
+    "segment": 4,
+    "word": "الساق",
+    "index": 1
+   },
+   "dur": 0.5
+  },
+  {
+   "id": "b1_lp2_leaves",
+   "tool": "sketch",
+   "label": "leaves",
+   "paths": [
+    "M 199 330 C 160 296 112 296 76 330 C 116 360 164 356 199 330",
+    "M 199 330 C 160 328 120 330 92 330",
+    "M 201 262 C 240 228 290 228 324 262 C 286 292 238 288 201 262",
+    "M 201 262 C 240 260 280 262 308 262"
+   ],
+   "color": "shape",
+   "group": "drawing",
+   "frame_of": "b1_lp2_soil",
+   "anchor": {
+    "segment": 5,
+    "word": "الأوراق",
+    "index": 1
+   },
+   "dur": 0.9
+  },
+  {
+   "id": "b1_lp2_sun",
+   "tool": "sketch",
+   "label": "sun",
+   "paths": [
+    "M 66 40 C 66 54.3 54.3 66 40 66 C 25.7 66 14 54.3 14 40 C 14 25.7 25.7 14 40 14 C 54.3 14 66 25.7 66 40",
+    "M 76.0 40.0 L 92.0 40.0",
+    "M 65.5 65.5 L 76.8 76.8",
+    "M 40.0 76.0 L 40.0 92.0",
+    "M 14.5 65.5 L 3.2 76.8",
+    "M 4.0 40.0 L -12.0 40.0",
+    "M 14.5 14.5 L 3.2 3.2",
+    "M 40.0 4.0 L 40.0 -12.0",
+    "M 65.5 14.5 L 76.8 3.2"
+   ],
+   "color": "accent",
+   "group": "drawing",
+   "frame_of": "b1_lp2_soil",
+   "anchor": {
+    "segment": 5,
+    "word": "الشمس",
+    "index": 6
+   },
+   "dur": 0.9
+  },
+  {
+   "id": "b1_lp2_flower",
+   "tool": "sketch",
+   "label": "flower",
+   "paths": [
+    "M 214.0 94.0 C 234.0 57.6 200.0 42.0 200.0 42.0 C 200.0 42.0 166.0 57.6 186.0 94.0",
+    "M 229.5 119.1 C 271.0 118.2 267.5 81.0 267.5 81.0 C 267.5 81.0 237.0 59.4 215.5 94.9",
+    "M 215.5 145.1 C 237.0 180.6 267.5 159.0 267.5 159.0 C 267.5 159.0 271.0 121.8 229.5 120.9",
+    "M 186.0 146.0 C 166.0 182.4 200.0 198.0 200.0 198.0 C 200.0 198.0 234.0 182.4 214.0 146.0",
+    "M 170.5 120.9 C 129.0 121.8 132.5 159.0 132.5 159.0 C 132.5 159.0 163.0 180.6 184.5 145.1",
+    "M 184.5 94.9 C 163.0 59.4 132.5 81.0 132.5 81.0 C 132.5 81.0 129.0 118.2 170.5 119.1",
+    "M 222 120 C 222 132.1 212.1 142 200 142 C 187.9 142 178 132.1 178 120 C 178 107.9 187.9 98 200 98 C 212.1 98 222 107.9 222 120"
+   ],
+   "color": "accent",
+   "group": "drawing",
+   "frame_of": "b1_lp2_soil",
+   "anchor": {
+    "segment": 6,
+    "word": "الزهرة",
+    "index": 1
+   },
+   "dur": 0.9
+  },
+  {
+   "id": "b1_lp2_wleaves",
+   "tool": "wash",
+   "label": "wash leaves",
+   "of": "b1_lp2_leaves",
+   "opacity": 0.32,
+   "group": "drawing",
+   "anchor": {
+    "segment": 5,
+    "word": "الغذاء",
+    "index": 3
+   },
+   "offset": 0,
+   "dur": 0.7
+  },
+  {
+   "id": "b1_lp2_wsun",
+   "tool": "wash",
+   "label": "wash sun",
+   "of": "b1_lp2_sun",
+   "color": "accent",
+   "opacity": 0.32,
+   "group": "drawing",
+   "anchor": {
+    "segment": 5,
+    "word": "الشمس",
+    "index": 6
+   },
+   "offset": 0.9,
+   "dur": 0.7
+  },
+  {
+   "id": "b1_lp2_wflower",
+   "tool": "wash",
+   "label": "wash flower",
+   "of": "b1_lp2_flower",
+   "color": "accent",
+   "opacity": 0.32,
+   "group": "drawing",
+   "anchor": {
+    "segment": 6,
+    "word": "منها",
+    "index": 2
+   },
+   "offset": 0,
+   "dur": 0.7
+  },
+  {
+   "id": "b1_lp2_lroots",
+   "tool": "label",
+   "label": "الجذور",
+   "text": "الجذور",
+   "size": 60,
+   "near": {
+    "of": "b1_lp2_roots",
+    "side": "right",
+    "fy": 0.5,
+    "frame": [
+     "b1_lp2_soil",
+     "b1_lp2_roots",
+     "b1_lp2_stem",
+     "b1_lp2_leaves",
+     "b1_lp2_sun",
+     "b1_lp2_flower"
+    ],
+    "gap": 40
+   },
+   "anchor": {
+    "segment": 3,
+    "word": "الجذور",
+    "index": 1
+   },
+   "offset": 0.2,
+   "dur": 0.4,
+   "group": "labels",
+   "appear": true
+  },
+  {
+   "id": "b1_lp2_aroots",
+   "tool": "arrow",
+   "label": "→ roots",
+   "from": {
+    "of": "b1_lp2_lroots",
+    "fx": 0,
+    "dx": -12,
+    "fy": 0.55
+   },
+   "to": {
+    "of": "b1_lp2_roots",
+    "fx": 0.5,
+    "fy": 0.5
+   },
+   "gap": 14,
+   "anchor": {
+    "segment": 3,
+    "word": "الجذور",
+    "index": 1
+   },
+   "offset": 0.95,
+   "dur": 0.35,
+   "group": "labels"
+  },
+  {
+   "id": "b1_lp2_rroots",
+   "tool": "highlight",
+   "label": "highlight b1_lp2_lroots",
+   "of": "b1_lp2_lroots",
+   "anchor": {
+    "segment": 7,
+    "word": "جذور",
+    "index": 1
+   },
+   "dur": 0.5,
+   "group": "labels",
+   "opacity": 0.22,
+   "fy": 0.6,
+   "width": 40
+  },
+  {
+   "id": "b1_lp2_lstem",
+   "tool": "label",
+   "label": "الساق",
+   "text": "الساق",
+   "size": 60,
+   "near": {
+    "of": "b1_lp2_stem",
+    "side": "right",
+    "fy": 0.5,
+    "frame": [
+     "b1_lp2_soil",
+     "b1_lp2_roots",
+     "b1_lp2_stem",
+     "b1_lp2_leaves",
+     "b1_lp2_sun",
+     "b1_lp2_flower"
+    ],
+    "gap": 40
+   },
+   "anchor": {
+    "segment": 4,
+    "word": "الساق",
+    "index": 1
+   },
+   "offset": 0.2,
+   "dur": 0.4,
+   "group": "labels",
+   "appear": true
+  },
+  {
+   "id": "b1_lp2_astem",
+   "tool": "arrow",
+   "label": "→ stem",
+   "from": {
+    "of": "b1_lp2_lstem",
+    "fx": 0,
+    "dx": -12,
+    "fy": 0.55
+   },
+   "to": {
+    "of": "b1_lp2_stem",
+    "fx": 0.5,
+    "fy": 0.5
+   },
+   "gap": 14,
+   "anchor": {
+    "segment": 4,
+    "word": "الساق",
+    "index": 1
+   },
+   "offset": 0.95,
+   "dur": 0.35,
+   "group": "labels"
+  },
+  {
+   "id": "b1_lp2_rstem",
+   "tool": "highlight",
+   "label": "highlight b1_lp2_lstem",
+   "of": "b1_lp2_lstem",
+   "anchor": {
+    "segment": 7,
+    "word": "ساق",
+    "index": 2
+   },
+   "dur": 0.5,
+   "group": "labels",
+   "opacity": 0.22,
+   "fy": 0.6,
+   "width": 40
+  },
+  {
+   "id": "b1_lp2_lleaves",
+   "tool": "label",
+   "label": "الأوراق",
+   "text": "الأوراق",
+   "size": 60,
+   "near": {
+    "of": "b1_lp2_leaves",
+    "side": "right",
+    "fy": 0.5,
+    "frame": [
+     "b1_lp2_soil",
+     "b1_lp2_roots",
+     "b1_lp2_stem",
+     "b1_lp2_leaves",
+     "b1_lp2_sun",
+     "b1_lp2_flower"
+    ],
+    "gap": 40
+   },
+   "anchor": {
+    "segment": 5,
+    "word": "الأوراق",
+    "index": 1
+   },
+   "offset": 0.2,
+   "dur": 0.4,
+   "group": "labels",
+   "appear": true
+  },
+  {
+   "id": "b1_lp2_aleaves",
+   "tool": "arrow",
+   "label": "→ leaves",
+   "from": {
+    "of": "b1_lp2_lleaves",
+    "fx": 0,
+    "dx": -12,
+    "fy": 0.55
+   },
+   "to": {
+    "of": "b1_lp2_leaves",
+    "fx": 0.5,
+    "fy": 0.5
+   },
+   "gap": 14,
+   "anchor": {
+    "segment": 5,
+    "word": "الأوراق",
+    "index": 1
+   },
+   "offset": 0.95,
+   "dur": 0.35,
+   "group": "labels"
+  },
+  {
+   "id": "b1_lp2_rleaves",
+   "tool": "highlight",
+   "label": "highlight b1_lp2_lleaves",
+   "of": "b1_lp2_lleaves",
+   "anchor": {
+    "segment": 7,
+    "word": "أوراق",
+    "index": 3
+   },
+   "dur": 0.5,
+   "group": "labels",
+   "opacity": 0.22,
+   "fy": 0.6,
+   "width": 40
+  },
+  {
+   "id": "b1_lp2_lflower",
+   "tool": "label",
+   "label": "الزهرة",
+   "text": "الزهرة",
+   "size": 60,
+   "color": "accent",
+   "near": {
+    "of": "b1_lp2_flower",
+    "side": "right",
+    "fy": 0.5,
+    "frame": [
+     "b1_lp2_soil",
+     "b1_lp2_roots",
+     "b1_lp2_stem",
+     "b1_lp2_leaves",
+     "b1_lp2_sun",
+     "b1_lp2_flower"
+    ],
+    "gap": 40
+   },
+   "anchor": {
+    "segment": 6,
+    "word": "الزهرة",
+    "index": 1
+   },
+   "offset": 0.2,
+   "dur": 0.4,
+   "group": "labels",
+   "appear": true
+  },
+  {
+   "id": "b1_lp2_aflower",
+   "tool": "arrow",
+   "label": "→ flower",
+   "from": {
+    "of": "b1_lp2_lflower",
+    "fx": 0,
+    "dx": -12,
+    "fy": 0.55
+   },
+   "to": {
+    "of": "b1_lp2_flower",
+    "fx": 0.5,
+    "fy": 0.5
+   },
+   "gap": 14,
+   "anchor": {
+    "segment": 6,
+    "word": "الزهرة",
+    "index": 1
+   },
+   "offset": 0.95,
+   "dur": 0.35,
+   "group": "labels"
+  },
+  {
+   "id": "b1_lp2_rflower",
+   "tool": "highlight",
+   "label": "highlight b1_lp2_lflower",
+   "of": "b1_lp2_lflower",
+   "anchor": {
+    "segment": 7,
+    "word": "وزهرة",
+    "index": 4
+   },
+   "dur": 0.5,
+   "group": "labels",
+   "opacity": 0.22,
+   "fy": 0.6,
+   "width": 40
+  },
+  {
+   "id": "b1_ok3",
+   "tool": "check",
+   "label": "tick",
+   "group": "celebrate",
+   "anchor": {
+    "segment": 8
+   },
+   "dur": 0.5,
+   "gap": 40
+  },
+  {
+   "id": "b1_sp3",
+   "tool": "sparkle",
+   "label": "sparkles",
+   "of": "b1_ok3",
+   "group": "celebrate",
+   "anchor": {
+    "segment": 8
+   },
+   "offset": 0.55,
+   "dur": 0.5
+  }
+ ]
+}

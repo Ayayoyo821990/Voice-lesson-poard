@@ -21,7 +21,7 @@ if (A && B) {
   ck('arrow gaps = wanted (±0.5 px)', A.arrows.every(a => Math.abs(a.gapPx - a.wanted) <= 0.5), A.arrows.map(a => `${a.arrow} ${a.gapPx}`).join(', '));
   ck('maths in every expr is true', (A.math || []).every(m => m.ok), (A.math || []).length ? A.math.map(m => `${m.id} ${m.ok ? (m.onPurpose ? 'wrong on purpose' : 'ok') : m.detail}`).join(', ') : 'no expr')
   ck(`fonts >= theme minimum (${A.layout.themeMinFontPx} px)`, A.layout.minFontPx >= A.layout.themeMinFontPx, `${A.layout.minFontPx} px`);
-  const target = A.layout.blockTarget ?? 960;     // 960 = half the frame; with captions/safe area: the middle of the space left for the board
+  const target = A.layout.blockTarget ?? (A.frame && A.frame.h ? A.frame.h / 2 : 960);     // 960 = half the frame; with captions/safe area: the middle of the space left for the board
   ck(`block centred in its area (${target})`, Math.abs(A.layout.blockCentre - target) < 0.01, `centre ${A.layout.blockCentre}, block ${A.layout.block}${A.layout.safe ? ', safe ' + JSON.stringify(A.layout.safe) : ''}`);
   ck('page loaded nothing outside the skill folder', A.requests.outsideSkill.length === 0 && B.requests.outsideSkill.length === 0, `${A.requests.total} loads`);
   ck('playwright resolved inside the skill folder', !A.playwright.startsWith('..'), A.playwright);

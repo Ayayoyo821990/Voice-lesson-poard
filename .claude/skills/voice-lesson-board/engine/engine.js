@@ -4,7 +4,8 @@
 'use strict';
 Math.random = () => { throw new Error('Math.random is forbidden: use the seeded rng'); };
 
-const L = window.LESSON, T = window.THEME, SEGS = window.SEGMENTS, WORDS = window.WORDS;
+const L = window.LESSON, T = { ...window.THEME }, SEGS = window.SEGMENTS, WORDS = window.WORDS;
+if (L.frame.min_font) T.minFontPx = L.frame.min_font;   // a landscape frame (YouTube, a class screen) is seen bigger than a phone: its own minimum
 if (!L || !T || !SEGS || !WORDS) throw new Error('lesson, theme, segments or words missing');
 const NS = 'http://www.w3.org/2000/svg';
 const FW = L.frame.w, FHt = L.frame.h, MARGIN = L.frame.margin;
@@ -30,8 +31,8 @@ function applyTheme() {
   $('grainRect').setAttribute('opacity', tx.grainOpacity);
   const gp = tx.grid; if (!gp) return;            // optional squared notebook paper
   const ln = document.createElementNS(NS, 'path'); let d = '';     // squared lines as one plain path
-  if (gp.kind !== 'lines') for (let x = -600; x <= 1680; x += gp.size) d += `M${x} -600V2520`;     // kind "lines": ruled paper
-  for (let y = -600; y <= 2520; y += gp.size) d += `M-600 ${y}H1680`;
+  if (gp.kind !== 'lines') for (let x = -600; x <= 2520; x += gp.size) d += `M${x} -600V2520`;     // kind "lines": ruled paper
+  for (let y = -600; y <= 2520; y += gp.size) d += `M-600 ${y}H2520`;
   for (const [k, v] of Object.entries({ d, fill: 'none', stroke: gp.color, 'stroke-width': gp.width || 2, opacity: gp.opacity ?? 1 })) ln.setAttribute(k, v);
   $('paper').insertBefore(ln, $('grainRect'));
   if (gp.margin_x !== undefined) {                 // a vertical margin line, like an exercise book
